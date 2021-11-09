@@ -1,0 +1,47 @@
+Para utilizar las herramientas en el servidor Zener se requiere:
+export VCS_HOME=/mnt/vol_NFS_Zener/tools/synopsys/apps/syn/L-2016.03-SP3/
+
+/mnt/vol_NFS_Zener/tools/synopsys/apps/syn/L-2016.03-SP3/bin/design_vision
+export SNPSLMD_LICENSE_FILE=27000@172.21.9.211
+
+Library:
+lsi_10k.db
+
+DC Compiler:
+designvision
+read_file -format sverilog {sdrc_top.v.sv}
+set target_library lsi_10k.db
+set link_library [list * lsi_10k.db]
+set_scan_configuration -style multiplexed_flip_flop
+compile -scan
+set_dft_signal -view existing_dft -type ScanClock -port clock -timing [list 40 60]
+set_dft_signal -view existing_dft -type Reset -active 1 -port reset
+set_dft_signal -view existing_dft -type Constant -active 1 -port test_se
+set_dft_signal -type TestMode -port test_se
+set_dft_signal -type TestData -port clock
+set_dft_signal -type TestData -port reset
+create_test_protocol
+dft_drc
+set_scan_configuration -chain_count 1
+preview_dft
+insert_dft
+dft_drc
+write_file -format verilog -out arbiter_syn_scan.v
+
+export SYNOPSYS=/mnt/vol_NFS_Zener/tools/synopsys/apps/syn/L-2016.03-SP3
+/mnt/vol_NFS_Zener/tools/synopsys/apps/syn/L-2016.03-SP3/linux64/syn/bin/tmax64
+
+tetramax:
+tmax64
+read_netlist class.v
+read_netlist arbiter_syn_scan.v
+run_build_model arbiter
+add_clocks 0 clock -shift
+add_scan_chains chain1 test_si test_so
+add_scan_enables 1 test_se
+run_drc
+set_atpg -merge medium
+set_faults -model stuck
+add_faults -all
+run_atpg
+write_patterns file.stil -internal -format stil
