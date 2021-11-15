@@ -1,0 +1,43 @@
+read_file -format verilog {/home/damartinezlocal/Proyecto/DUT_2/sdrc_top.v}
+
+analyze -format verilog {../Proyecto/DUT_2/async_fifo.v ../Proyecto/DUT_2/sdrc_bank_ctl.v ../Proyecto/DUT_2/sdrc_bank_fsm.v ../Proyecto/DUT_2/sdrc_bs_convert.v ../Proyecto/DUT_2/sdrc_core.v ../Proyecto/DUT_2/sdrc_define.v ../Proyecto/DUT_2/sdrc_req_gen.v ../Proyecto/DUT_2/sdrc_top.v ../Proyecto/DUT_2/sdrc_xfr_ctl.v ../Proyecto/DUT_2/sync_fifo.v ../Proyecto/DUT_2/wb2sdrc.v}
+
+
+current_design sdrc_top
+create_port -direction "in" {TEST_MODE}
+set target_library lsi_10k.db
+set link_library [list * lsi_10k.db]
+set_scan_configuration -style multiplexed_flip_flop
+
+compile -scan
+set test_default_period 10
+set test_default_bidir_delay 0
+set test_default_delay 0
+set test_default_min_fault_coverage 98
+set test_default_scan_style "multiplexed_flip_flop"
+set test_default_strobe 2
+
+set_dft_signal -view existing_dft -type ScanClock -port sdram_clk -timing {4.0 5.0}
+set_dft_signal -view existing_dft -type ScanClock -port wb_clk_i -timing {4.0 5.0}
+set_dft_signal -view existing_dft -type Constant -active 0 -port TEST_MODE
+set_dft_signal -view existing_dft -type Reset -active 1 -port sdram_resetn
+set_dft_signal -view existing_dft -type Reset -active 1 -port wb_rst_i
+set_dft_signal -type TestMode -port TEST_MODE
+set_dft_signal -type TestData -port sdram_clk
+set_dft_signal -type TestData -port wb_clk_i
+set_dft_signal -type TestData -port wb_rst_i
+set_dft_signal -type TestData -port sdram_resetn
+create_test_protocol -infer_clock -capture_procedure multi_clock
+dft_drc
+set_scan_configuration -chain_count 50
+
+set_scan_configuration -chain_count 50 \
+-add_lockup true \
+-internal_clocks multi\
+-clock_mixing mix_clocks \
+-style multiplexed_flip_flop
+
+preview_dft
+insert_dft
+dft_drc
+write_file -format verilog -out top_scan.v
