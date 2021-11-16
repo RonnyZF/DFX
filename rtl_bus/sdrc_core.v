@@ -262,33 +262,6 @@ always@(posedge clk) begin
    pad_sdr_din2 <= pad_sdr_din1;
 end
 
-///Wires added for synopsis
-wire r2x_idle;
-wire r2b_req;
-wire r2b_start;  
-wire r2b_last;        
-wire r2b_wrap;           
-wire r2b_write;          
-wire b2r_ack;            
-wire b2r_arb_ok;          
-wire b2x_idle;         
-wire b2x_start;            
-wire b2x_wrap;         
-wire x2b_ack;            
-wire b2x_tras_ok;
-wire x2b_refresh;
-wire x2b_act_ok;
-wire x2b_rdok;  
-wire x2b_wrok;        
-wire x2a_rdstart;           
-wire x2a_wrstart;          
-wire x2a_rdlast;            
-wire x2a_wrlast;          
-wire x2a_wrnext;         
-wire x2a_rdok;            
-wire b2x_req;         
-wire b2x_last;
-
 
    /****************************************************************************/
    // Instantiate sdr_req_gen

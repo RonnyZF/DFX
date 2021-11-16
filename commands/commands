@@ -1,28 +1,30 @@
-read_file -format verilog {/home/damartinezlocal/Proyecto/DUT_2/sdrc_top.v}
+#Design Vision
 
-analyze -format verilog {../Proyecto/DUT_2/async_fifo.v ../Proyecto/DUT_2/sdrc_bank_ctl.v ../Proyecto/DUT_2/sdrc_bank_fsm.v ../Proyecto/DUT_2/sdrc_bs_convert.v ../Proyecto/DUT_2/sdrc_core.v ../Proyecto/DUT_2/sdrc_define.v ../Proyecto/DUT_2/sdrc_req_gen.v ../Proyecto/DUT_2/sdrc_top.v ../Proyecto/DUT_2/sdrc_xfr_ctl.v ../Proyecto/DUT_2/sync_fifo.v ../Proyecto/DUT_2/wb2sdrc.v}
-
-
-current_design sdrc_top
-create_port -direction "in" {TEST_MODE}
 set target_library lsi_10k.db
 set link_library [list * lsi_10k.db]
-set_scan_configuration -style multiplexed_flip_flop
-
-compile -scan
 set test_default_period 10
 set test_default_bidir_delay 0
 set test_default_delay 0
-set test_default_min_fault_coverage 98
 set test_default_scan_style "multiplexed_flip_flop"
 set test_default_strobe 2
 
+analyze -format verilog -lib WORk {../Proyecto/DUT_2/async_fifo.v ../Proyecto/DUT_2/sdrc_bank_ctl.v ../Proyecto/DUT_2/sdrc_bank_fsm.v ../Proyecto/DUT_2/sdrc_bs_convert.v ../Proyecto/DUT_2/sdrc_core.v ../Proyecto/DUT_2/sdrc_define.v ../Proyecto/DUT_2/sdrc_req_gen.v ../Proyecto/DUT_2/sdrc_top.v ../Proyecto/DUT_2/sdrc_xfr_ctl.v ../Proyecto/DUT_2/sync_fifo.v ../Proyecto/DUT_2/wb2sdrc.v}
+elaborate sdrc_top -lib WORK -update
+link
+uniquify
+set target_library lsi_10k.db
+set link_library [list * lsi_10k.db]
+set test_default_period 10
+set test_default_bidir_delay 0
+set test_default_delay 0
+set test_default_scan_style "multiplexed_flip_flop"
+set test_default_strobe 2
+compile -scan
 set_dft_signal -view existing_dft -type ScanClock -port sdram_clk -timing {4.0 5.0}
 set_dft_signal -view existing_dft -type ScanClock -port wb_clk_i -timing {4.0 5.0}
 set_dft_signal -view existing_dft -type Constant -active 0 -port TEST_MODE
 set_dft_signal -view existing_dft -type Reset -active 1 -port sdram_resetn
 set_dft_signal -view existing_dft -type Reset -active 1 -port wb_rst_i
-set_dft_signal -type TestMode -port TEST_MODE
 set_dft_signal -type TestData -port sdram_clk
 set_dft_signal -type TestData -port wb_clk_i
 set_dft_signal -type TestData -port wb_rst_i
@@ -30,14 +32,78 @@ set_dft_signal -type TestData -port sdram_resetn
 create_test_protocol -infer_clock -capture_procedure multi_clock
 dft_drc
 set_scan_configuration -chain_count 50
-
-set_scan_configuration -chain_count 50 \
--add_lockup true \
--internal_clocks multi\
--clock_mixing mix_clocks \
--style multiplexed_flip_flop
-
 preview_dft
 insert_dft
 dft_drc
-write_file -format verilog -out top_scan.v
+change_names -rules verilog -verbose -hierarchy
+sh mkdir src
+write -format verilog -hierarchy -out [format "%s%s%s" ./src/ sdrc_top_struct.v" ]
+set test_stil_netlist_format verilog
+sh mkdir reports
+write_test_protocol -output reports/protocol.spf"
+
+#TETRAMAX
+read_netlist -delete
+read_netlist /home/damartinezlocal/Synopsis/src/class.v
+read_netlist /home/damartinezlocal/Synopsis/src/sdrc_top_struct.v
+run_build_model sdrc_top
+set_drc /home/damartinezlocal/Synopsis/reports/protocol.spf
+add_clocks 0 sdram_clk -shift
+add_clocks 0 wb_clk_i -shift
+add_scan_chains chain1 test_si1 test_so1
+add_scan_chains chain2 test_si2 test_so2
+add_scan_chains chain3 test_si3 test_so3
+add_scan_chains chain4 test_si4 test_so4
+add_scan_chains chain5 test_si5 test_so5
+add_scan_chains chain6 test_si6 test_so6
+add_scan_chains chain7 test_si7 test_so7
+add_scan_chains chain8 test_si8 test_so8
+add_scan_chains chain9 test_si9 test_so9
+add_scan_chains chain10 test_si10 test_so10
+add_scan_chains chain11 test_si11 test_so11
+add_scan_chains chain12 test_si12 test_so12
+add_scan_chains chain13 test_si13 test_so13
+add_scan_chains chain14 test_si14 test_so14
+add_scan_chains chain15 test_si15 test_so15
+add_scan_chains chain16 test_si16 test_so16
+add_scan_chains chain17 test_si17 test_so17
+add_scan_chains chain18 test_si18 test_so18
+add_scan_chains chain19 test_si19 test_so19
+add_scan_chains chain20 test_si20 test_so20
+add_scan_chains chain21 test_si21 test_so21
+add_scan_chains chain22 test_si22 test_so22
+add_scan_chains chain23 test_si23 test_so23
+add_scan_chains chain24 test_si24 test_so24
+add_scan_chains chain25 test_si25 test_so25
+add_scan_chains chain26 test_si26 test_so26
+add_scan_chains chain27 test_si27 test_so27
+add_scan_chains chain28 test_si28 test_so28
+add_scan_chains chain29 test_si29 test_so29
+add_scan_chains chain30 test_si30 test_so30
+add_scan_chains chain31 test_si31 test_so31
+add_scan_chains chain32 test_si32 test_so32
+add_scan_chains chain33 test_si33 test_so33
+add_scan_chains chain34 test_si34 test_so34
+add_scan_chains chain35 test_si35 test_so35
+add_scan_chains chain36 test_si36 test_so36
+add_scan_chains chain37 test_si37 test_so37
+add_scan_chains chain38 test_si38 test_so38
+add_scan_chains chain39 test_si39 test_so39
+add_scan_chains chain40 test_si40 test_so40
+add_scan_chains chain41 test_si41 test_so41
+add_scan_chains chain42 test_si42 test_so42
+add_scan_chains chain43 test_si43 test_so43
+add_scan_chains chain44 test_si44 test_so44
+add_scan_chains chain45 test_si45 test_so45
+add_scan_chains chain46 test_si46 test_so46
+add_scan_chains chain47 test_si47 test_so47
+add_scan_chains chain48 test_si48 test_so48
+add_scan_chains chain49 test_si49 test_so49
+add_scan_chains chain50 test_si50 test_so50
+set_rule C4 ignore
+run_drc
+set_atpg -merge medium
+set_faults -model stuck
+add_faults -all
+run_atpg
+write_patterns file.stil -internal -format stil
