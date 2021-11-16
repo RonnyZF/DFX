@@ -60,23 +60,15 @@ later version.
 
 
 `include "sdrc_define.v"
-`include "async_fifo.v"
-`include "sdrc_bank_ctl.v"
-`include "sdrc_bank_fsm.v"
-`include "sdrc_bs_convert.v"
-`include "sdrc_define.v"
-`include "sdrc_req_gen.v"
-`include "sdrc_xfr_ctl.v"
-`include "sync_fifo.v"
-`include "wb2sdrc.v"
-`include "sdrc_core.v"
-
 module sdrc_top 
            (
                     cfg_sdr_width       ,
                     cfg_colbits         ,
+                    
+                // WB bus
                     wb_rst_i            ,
                     wb_clk_i            ,
+                    
                     wb_stb_i            ,
                     wb_ack_o            ,
                     wb_addr_i           ,
@@ -86,6 +78,9 @@ module sdrc_top
                     wb_dat_o            ,
                     wb_cyc_i            ,
                     wb_cti_i            , 
+
+		
+		/* Interface to SDRAMs */
                     sdram_clk           ,
                     sdram_resetn        ,
                     sdr_cs_n            ,
@@ -97,8 +92,10 @@ module sdrc_top
                     sdr_ba              ,
                     sdr_addr            , 
                     sdr_dq              ,
+                    
+		/* Parameters */
                     sdr_init_done       ,
-                    cfg_req_depth       ,	        
+                    cfg_req_depth       ,	        //how many req. buffer should hold
                     cfg_sdr_en          ,
                     cfg_sdr_mode_reg    ,
                     cfg_sdr_tras_d      ,
@@ -109,25 +106,25 @@ module sdrc_top
                     cfg_sdr_twr_d       ,
                     cfg_sdr_rfsh        ,
 	            cfg_sdr_rfmax
-);
-
-//Parameters
+	    );
+  
 parameter      APP_AW   = 26;  // Application Address Width
 parameter      APP_DW   = 32;  // Application Data Width 
 parameter      APP_BW   = 4;   // Application Byte Width
 parameter      APP_RW   = 9;   // Application Request Width
+
 parameter      SDR_DW   = 16;  // SDR Data Width 
-parameter      SDR_BW   = 2;   // SDR Byte Width        
+parameter      SDR_BW   = 2;   // SDR Byte Width
+             
 parameter      dw       = 32;  // data width
 parameter      tw       = 8;   // tag id width
 parameter      bl       = 9;   // burst_lenght_width 
 
-//Set Clk 
-input                   sdram_clk          ;  
-
-//Set Resets
-input                   sdram_resetn       ;
-wire                    sdram_resetn       ;
+//-----------------------------------------------
+// Global Variable
+// ----------------------------------------------
+input                   sdram_clk          ; // SDRAM Clock 
+input                   sdram_resetn       ; // Reset Signal
 input [1:0]             cfg_sdr_width      ; // 2'b00 - 32 Bit SDR, 2'b01 - 16 Bit SDR, 2'b1x - 8 Bit
 input [1:0]             cfg_colbits        ; // 2'b00 - 8 Bit column address, 
                                              // 2'b01 - 9 Bit, 10 - 10 bit, 11 - 11Bits
@@ -137,12 +134,13 @@ input [1:0]             cfg_colbits        ; // 2'b00 - 8 Bit column address,
 // -------------------------------------      
 input                   wb_rst_i           ;
 input                   wb_clk_i           ;
+
 input                   wb_stb_i           ;
 output                  wb_ack_o           ;
-input [APP_AW-1:0]      wb_addr_i          ;
-input                   wb_we_i            ; 
+input [APP_AW-1:0]            wb_addr_i          ;
+input                   wb_we_i            ; // 1 - Write, 0 - Read
 input [dw-1:0]          wb_dat_i           ;
-input [dw/8-1:0]        wb_sel_i           ;
+input [dw/8-1:0]        wb_sel_i           ; // Byte enable
 output [dw-1:0]         wb_dat_o           ;
 input                   wb_cyc_i           ;
 input  [2:0]            wb_cti_i           ;
@@ -199,14 +197,14 @@ wire  [dw-1:0]        app_rd_data        ; // sdr read data
 wire  [SDR_DW-1:0]    pad_sdr_din         ; // SDRA Data Input
 wire  [SDR_DW-1:0]    sdr_dout            ; // SDRAM Data Output
 wire  [SDR_BW-1:0]    sdr_den_n           ; // SDRAM Data Output enable
-wire  [SDR_DW-1:0]    sdr_dq              ;
+
 
 assign   sdr_dq = (&sdr_den_n == 1'b0) ? sdr_dout :  {SDR_DW{1'bz}}; 
 assign   pad_sdr_din = sdr_dq;
 
 // sdram pad clock is routed back through pad
 // SDRAM Clock from Pad, used for registering Read Data
-//wire sdram_pad_clk = sdram_clk;
+wire #(1.0) sdram_pad_clk = sdram_clk;
 
 /************** Ends Here **************************/
 wb2sdrc #(.dw(dw),.tw(tw),.bl(bl)) u_wb2sdrc (
@@ -227,7 +225,7 @@ wb2sdrc #(.dw(dw),.tw(tw),.bl(bl)) u_wb2sdrc (
 
       //SDRAM Controller Hand-Shake Signal 
           .sdram_clk          (sdram_clk          ) ,
-          .sdram_resetn       (sdram_resetn     ) ,
+          .sdram_resetn       (sdram_resetn       ) ,
           .sdr_req            (app_req            ) ,
           .sdr_req_addr       (app_req_addr       ) ,
           .sdr_req_len        (app_req_len        ) ,
@@ -246,7 +244,7 @@ wb2sdrc #(.dw(dw),.tw(tw),.bl(bl)) u_wb2sdrc (
 
 sdrc_core #(.SDR_DW(SDR_DW) , .SDR_BW(SDR_BW)) u_sdrc_core (
           .clk                (sdram_clk          ) ,
-          .pad_clk            (sdram_clk          ) ,
+          .pad_clk            (sdram_pad_clk      ) ,
           .reset_n            (sdram_resetn       ) ,
           .sdr_width          (cfg_sdr_width      ) ,
           .cfg_colbits        (cfg_colbits        ) ,
