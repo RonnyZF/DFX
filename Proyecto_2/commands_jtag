@@ -1,0 +1,6 @@
+##Correr desde la carpeta jtag
+
+sh /home/gcastrolocal/tools/vcs/R-2020.12-SP2/bin/vcs -sverilog -full64 -f filelist -gui -debug_access+all +warn=all -kdb
+
+./simv
+

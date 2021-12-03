@@ -1,0 +1,4 @@
+src_jtag/tap.v
+src_jtag/tdi_tdo_generator.v
+src_jtag/asic.v
+src_jtag/duv_with_tap.v

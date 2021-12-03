@@ -1,0 +1,1533 @@
+STIL 1.0 {
+    Design 2005;
+}
+Header {
+    Title "Minimal STIL for design `sdrc_top'";
+    Date "Thu Dec  2 16:32:40 2021";
+    Source "DFT Compiler R-2020.09-SP5-1";
+}
+Signals {
+    "cfg_colbits[0]" In;
+    "cfg_colbits[1]" In;
+    "cfg_req_depth[0]" In;
+    "cfg_req_depth[1]" In;
+    "cfg_sdr_cas[0]" In;
+    "cfg_sdr_cas[1]" In;
+    "cfg_sdr_cas[2]" In;
+    "cfg_sdr_en" In;
+    "cfg_sdr_mode_reg[0]" In;
+    "cfg_sdr_mode_reg[10]" In;
+    "cfg_sdr_mode_reg[11]" In;
+    "cfg_sdr_mode_reg[12]" In;
+    "cfg_sdr_mode_reg[1]" In;
+    "cfg_sdr_mode_reg[2]" In;
+    "cfg_sdr_mode_reg[3]" In;
+    "cfg_sdr_mode_reg[4]" In;
+    "cfg_sdr_mode_reg[5]" In;
+    "cfg_sdr_mode_reg[6]" In;
+    "cfg_sdr_mode_reg[7]" In;
+    "cfg_sdr_mode_reg[8]" In;
+    "cfg_sdr_mode_reg[9]" In;
+    "cfg_sdr_rfmax[0]" In;
+    "cfg_sdr_rfmax[1]" In;
+    "cfg_sdr_rfmax[2]" In;
+    "cfg_sdr_rfsh[0]" In;
+    "cfg_sdr_rfsh[10]" In;
+    "cfg_sdr_rfsh[11]" In;
+    "cfg_sdr_rfsh[1]" In;
+    "cfg_sdr_rfsh[2]" In;
+    "cfg_sdr_rfsh[3]" In;
+    "cfg_sdr_rfsh[4]" In;
+    "cfg_sdr_rfsh[5]" In;
+    "cfg_sdr_rfsh[6]" In;
+    "cfg_sdr_rfsh[7]" In;
+    "cfg_sdr_rfsh[8]" In;
+    "cfg_sdr_rfsh[9]" In;
+    "cfg_sdr_tras_d[0]" In;
+    "cfg_sdr_tras_d[1]" In;
+    "cfg_sdr_tras_d[2]" In;
+    "cfg_sdr_tras_d[3]" In;
+    "cfg_sdr_trcar_d[0]" In;
+    "cfg_sdr_trcar_d[1]" In;
+    "cfg_sdr_trcar_d[2]" In;
+    "cfg_sdr_trcar_d[3]" In;
+    "cfg_sdr_trcd_d[0]" In;
+    "cfg_sdr_trcd_d[1]" In;
+    "cfg_sdr_trcd_d[2]" In;
+    "cfg_sdr_trcd_d[3]" In;
+    "cfg_sdr_trp_d[0]" In;
+    "cfg_sdr_trp_d[1]" In;
+    "cfg_sdr_trp_d[2]" In;
+    "cfg_sdr_trp_d[3]" In;
+    "cfg_sdr_twr_d[0]" In;
+    "cfg_sdr_twr_d[1]" In;
+    "cfg_sdr_twr_d[2]" In;
+    "cfg_sdr_twr_d[3]" In;
+    "cfg_sdr_width[0]" In;
+    "cfg_sdr_width[1]" In;
+    "sdram_clk" In;
+    "sdram_resetn" In;
+    "wb_addr_i[0]" In;
+    "wb_addr_i[10]" In;
+    "wb_addr_i[11]" In;
+    "wb_addr_i[12]" In;
+    "wb_addr_i[13]" In;
+    "wb_addr_i[14]" In;
+    "wb_addr_i[15]" In;
+    "wb_addr_i[16]" In;
+    "wb_addr_i[17]" In;
+    "wb_addr_i[18]" In;
+    "wb_addr_i[19]" In;
+    "wb_addr_i[1]" In;
+    "wb_addr_i[20]" In;
+    "wb_addr_i[21]" In;
+    "wb_addr_i[22]" In;
+    "wb_addr_i[23]" In;
+    "wb_addr_i[24]" In;
+    "wb_addr_i[25]" In;
+    "wb_addr_i[2]" In;
+    "wb_addr_i[3]" In;
+    "wb_addr_i[4]" In;
+    "wb_addr_i[5]" In;
+    "wb_addr_i[6]" In;
+    "wb_addr_i[7]" In;
+    "wb_addr_i[8]" In;
+    "wb_addr_i[9]" In;
+    "wb_clk_i" In;
+    "wb_cti_i[0]" In;
+    "wb_cti_i[1]" In;
+    "wb_cti_i[2]" In;
+    "wb_cyc_i" In;
+    "wb_dat_i[0]" In;
+    "wb_dat_i[10]" In;
+    "wb_dat_i[11]" In;
+    "wb_dat_i[12]" In;
+    "wb_dat_i[13]" In;
+    "wb_dat_i[14]" In;
+    "wb_dat_i[15]" In;
+    "wb_dat_i[16]" In;
+    "wb_dat_i[17]" In;
+    "wb_dat_i[18]" In;
+    "wb_dat_i[19]" In;
+    "wb_dat_i[1]" In;
+    "wb_dat_i[20]" In;
+    "wb_dat_i[21]" In;
+    "wb_dat_i[22]" In;
+    "wb_dat_i[23]" In;
+    "wb_dat_i[24]" In;
+    "wb_dat_i[25]" In;
+    "wb_dat_i[26]" In;
+    "wb_dat_i[27]" In;
+    "wb_dat_i[28]" In;
+    "wb_dat_i[29]" In;
+    "wb_dat_i[2]" In;
+    "wb_dat_i[30]" In;
+    "wb_dat_i[31]" In;
+    "wb_dat_i[3]" In;
+    "wb_dat_i[4]" In;
+    "wb_dat_i[5]" In;
+    "wb_dat_i[6]" In;
+    "wb_dat_i[7]" In;
+    "wb_dat_i[8]" In;
+    "wb_dat_i[9]" In;
+    "wb_rst_i" In;
+    "wb_sel_i[0]" In;
+    "wb_sel_i[1]" In;
+    "wb_sel_i[2]" In;
+    "wb_sel_i[3]" In;
+    "wb_stb_i" In;
+    "wb_we_i" In;
+    "sdr_addr[0]" Out;
+    "sdr_addr[10]" Out;
+    "sdr_addr[11]" Out;
+    "sdr_addr[12]" Out;
+    "sdr_addr[1]" Out;
+    "sdr_addr[2]" Out;
+    "sdr_addr[3]" Out;
+    "sdr_addr[4]" Out;
+    "sdr_addr[5]" Out;
+    "sdr_addr[6]" Out;
+    "sdr_addr[7]" Out;
+    "sdr_addr[8]" Out;
+    "sdr_addr[9]" Out;
+    "sdr_ba[0]" Out;
+    "sdr_ba[1]" Out;
+    "sdr_cas_n" Out;
+    "sdr_cke" Out;
+    "sdr_cs_n" Out;
+    "sdr_dqm[0]" Out;
+    "sdr_dqm[1]" Out;
+    "sdr_init_done" Out;
+    "sdr_ras_n" Out;
+    "sdr_we_n" Out;
+    "wb_ack_o" Out;
+    "wb_dat_o[0]" Out;
+    "wb_dat_o[10]" Out;
+    "wb_dat_o[11]" Out;
+    "wb_dat_o[12]" Out;
+    "wb_dat_o[13]" Out;
+    "wb_dat_o[14]" Out;
+    "wb_dat_o[15]" Out;
+    "wb_dat_o[16]" Out;
+    "wb_dat_o[17]" Out;
+    "wb_dat_o[18]" Out;
+    "wb_dat_o[19]" Out;
+    "wb_dat_o[1]" Out;
+    "wb_dat_o[20]" Out;
+    "wb_dat_o[21]" Out;
+    "wb_dat_o[22]" Out;
+    "wb_dat_o[23]" Out;
+    "wb_dat_o[24]" Out;
+    "wb_dat_o[25]" Out;
+    "wb_dat_o[26]" Out;
+    "wb_dat_o[27]" Out;
+    "wb_dat_o[28]" Out;
+    "wb_dat_o[29]" Out;
+    "wb_dat_o[2]" Out;
+    "wb_dat_o[30]" Out;
+    "wb_dat_o[31]" Out;
+    "wb_dat_o[3]" Out;
+    "wb_dat_o[4]" Out;
+    "wb_dat_o[5]" Out;
+    "wb_dat_o[6]" Out;
+    "wb_dat_o[7]" Out;
+    "wb_dat_o[8]" Out;
+    "wb_dat_o[9]" Out;
+    "sdr_dq[0]" InOut;
+    "sdr_dq[10]" InOut;
+    "sdr_dq[11]" InOut;
+    "sdr_dq[12]" InOut;
+    "sdr_dq[13]" InOut;
+    "sdr_dq[14]" InOut;
+    "sdr_dq[15]" InOut;
+    "sdr_dq[1]" InOut;
+    "sdr_dq[2]" InOut;
+    "sdr_dq[3]" InOut;
+    "sdr_dq[4]" InOut;
+    "sdr_dq[5]" InOut;
+    "sdr_dq[6]" InOut;
+    "sdr_dq[7]" InOut;
+    "sdr_dq[8]" InOut;
+    "sdr_dq[9]" InOut;
+    "test_si1" In;
+    "test_so1" Out;
+    "test_si2" In;
+    "test_so2" Out;
+    "test_si3" In;
+    "test_so3" Out;
+    "test_si4" In;
+    "test_so4" Out;
+    "test_si5" In;
+    "test_so5" Out;
+    "test_si6" In;
+    "test_so6" Out;
+    "test_si7" In;
+    "test_so7" Out;
+    "test_si8" In;
+    "test_so8" Out;
+    "test_si9" In;
+    "test_so9" Out;
+    "test_si10" In;
+    "test_so10" Out;
+    "test_si11" In;
+    "test_so11" Out;
+    "test_si12" In;
+    "test_so12" Out;
+    "test_si13" In;
+    "test_so13" Out;
+    "test_si14" In;
+    "test_so14" Out;
+    "test_si15" In;
+    "test_so15" Out;
+    "test_si16" In;
+    "test_so16" Out;
+    "test_si17" In;
+    "test_so17" Out;
+    "test_si18" In;
+    "test_so18" Out;
+    "test_si19" In;
+    "test_so19" Out;
+    "test_si20" In;
+    "test_so20" Out;
+    "test_si21" In;
+    "test_so21" Out;
+    "test_si22" In;
+    "test_so22" Out;
+    "test_si23" In;
+    "test_so23" Out;
+    "test_si24" In;
+    "test_so24" Out;
+    "test_si25" In;
+    "test_so25" Out;
+    "test_si26" In;
+    "test_so26" Out;
+    "test_si27" In;
+    "test_so27" Out;
+    "test_si28" In;
+    "test_so28" Out;
+    "test_si29" In;
+    "test_so29" Out;
+    "test_si30" In;
+    "test_so30" Out;
+    "test_si31" In;
+    "test_so31" Out;
+    "test_si32" In;
+    "test_so32" Out;
+    "test_si33" In;
+    "test_so33" Out;
+    "test_si34" In;
+    "test_so34" Out;
+    "test_si35" In;
+    "test_si36" In;
+    "test_si37" In;
+    "test_so37" Out;
+    "test_si38" In;
+    "test_si39" In;
+    "test_so39" Out;
+    "test_si40" In;
+    "test_so40" Out;
+    "test_si41" In;
+    "test_so41" Out;
+    "test_si42" In;
+    "test_so42" Out;
+    "test_si43" In;
+    "test_so43" Out;
+    "test_si44" In;
+    "test_so44" Out;
+    "test_si45" In;
+    "test_so45" Out;
+    "test_si46" In;
+    "test_so46" Out;
+    "test_si47" In;
+    "test_so47" Out;
+    "test_si48" In;
+    "test_so48" Out;
+    "test_si49" In;
+    "test_so49" Out;
+    "test_si50" In;
+    "test_so50" Out;
+    "test_se" In;
+}
+SignalGroups {
+    "_si" = '"test_si1" + "test_si2" + "test_si3" + "test_si4" + "test_si5" + 
+    "test_si6" + "test_si7" + "test_si8" + "test_si9" + "test_si10" + 
+    "test_si11" + "test_si12" + "test_si13" + "test_si14" + "test_si15" + 
+    "test_si16" + "test_si17" + "test_si18" + "test_si19" + "test_si20" + 
+    "test_si21" + "test_si22" + "test_si23" + "test_si24" + "test_si25" + 
+    "test_si26" + "test_si27" + "test_si28" + "test_si29" + "test_si30" + 
+    "test_si31" + "test_si32" + "test_si33" + "test_si34" + "test_si35" + 
+    "test_si36" + "test_si37" + "test_si38" + "test_si39" + "test_si40" + 
+    "test_si41" + "test_si42" + "test_si43" + "test_si44" + "test_si45" + 
+    "test_si46" + "test_si47" + "test_si48" + "test_si49" + "test_si50"' {
+        ScanIn;
+    }
+    "_so" = '"sdr_addr[11]" + "sdr_cs_n" + "sdr_we_n" + "test_so1" + "test_so2" 
+    + "test_so3" + "test_so4" + "test_so5" + "test_so6" + "test_so7" + 
+    "test_so8" + "test_so9" + "test_so10" + "test_so11" + "test_so12" + 
+    "test_so13" + "test_so14" + "test_so15" + "test_so16" + "test_so17" + 
+    "test_so18" + "test_so19" + "test_so20" + "test_so21" + "test_so22" + 
+    "test_so23" + "test_so24" + "test_so25" + "test_so26" + "test_so27" + 
+    "test_so28" + "test_so29" + "test_so30" + "test_so31" + "test_so32" + 
+    "test_so33" + "test_so34" + "test_so37" + "test_so39" + "test_so40" + 
+    "test_so41" + "test_so42" + "test_so43" + "test_so44" + "test_so45" + 
+    "test_so46" + "test_so47" + "test_so48" + "test_so49" + "test_so50"' {
+        ScanOut;
+    }
+    "_clk" = '"sdram_clk" + "sdram_resetn" + "wb_clk_i" + "wb_rst_i"';
+    "all_inputs" = '"cfg_colbits[0]" + "cfg_colbits[1]" + "cfg_req_depth[0]" + 
+    "cfg_req_depth[1]" + "cfg_sdr_cas[0]" + "cfg_sdr_cas[1]" + "cfg_sdr_cas[2]" 
+    + "cfg_sdr_en" + "cfg_sdr_mode_reg[0]" + "cfg_sdr_mode_reg[10]" + 
+    "cfg_sdr_mode_reg[11]" + "cfg_sdr_mode_reg[12]" + "cfg_sdr_mode_reg[1]" + 
+    "cfg_sdr_mode_reg[2]" + "cfg_sdr_mode_reg[3]" + "cfg_sdr_mode_reg[4]" + 
+    "cfg_sdr_mode_reg[5]" + "cfg_sdr_mode_reg[6]" + "cfg_sdr_mode_reg[7]" + 
+    "cfg_sdr_mode_reg[8]" + "cfg_sdr_mode_reg[9]" + "cfg_sdr_rfmax[0]" + 
+    "cfg_sdr_rfmax[1]" + "cfg_sdr_rfmax[2]" + "cfg_sdr_rfsh[0]" + 
+    "cfg_sdr_rfsh[10]" + "cfg_sdr_rfsh[11]" + "cfg_sdr_rfsh[1]" + 
+    "cfg_sdr_rfsh[2]" + "cfg_sdr_rfsh[3]" + "cfg_sdr_rfsh[4]" + 
+    "cfg_sdr_rfsh[5]" + "cfg_sdr_rfsh[6]" + "cfg_sdr_rfsh[7]" + 
+    "cfg_sdr_rfsh[8]" + "cfg_sdr_rfsh[9]" + "cfg_sdr_tras_d[0]" + 
+    "cfg_sdr_tras_d[1]" + "cfg_sdr_tras_d[2]" + "cfg_sdr_tras_d[3]" + 
+    "cfg_sdr_trcar_d[0]" + "cfg_sdr_trcar_d[1]" + "cfg_sdr_trcar_d[2]" + 
+    "cfg_sdr_trcar_d[3]" + "cfg_sdr_trcd_d[0]" + "cfg_sdr_trcd_d[1]" + 
+    "cfg_sdr_trcd_d[2]" + "cfg_sdr_trcd_d[3]" + "cfg_sdr_trp_d[0]" + 
+    "cfg_sdr_trp_d[1]" + "cfg_sdr_trp_d[2]" + "cfg_sdr_trp_d[3]" + 
+    "cfg_sdr_twr_d[0]" + "cfg_sdr_twr_d[1]" + "cfg_sdr_twr_d[2]" + 
+    "cfg_sdr_twr_d[3]" + "cfg_sdr_width[0]" + "cfg_sdr_width[1]" + "sdram_clk" + 
+    "sdram_resetn" + "wb_addr_i[0]" + "wb_addr_i[10]" + "wb_addr_i[11]" + 
+    "wb_addr_i[12]" + "wb_addr_i[13]" + "wb_addr_i[14]" + "wb_addr_i[15]" + 
+    "wb_addr_i[16]" + "wb_addr_i[17]" + "wb_addr_i[18]" + "wb_addr_i[19]" + 
+    "wb_addr_i[1]" + "wb_addr_i[20]" + "wb_addr_i[21]" + "wb_addr_i[22]" + 
+    "wb_addr_i[23]" + "wb_addr_i[24]" + "wb_addr_i[25]" + "wb_addr_i[2]" + 
+    "wb_addr_i[3]" + "wb_addr_i[4]" + "wb_addr_i[5]" + "wb_addr_i[6]" + 
+    "wb_addr_i[7]" + "wb_addr_i[8]" + "wb_addr_i[9]" + "wb_clk_i" + 
+    "wb_cti_i[0]" + "wb_cti_i[1]" + "wb_cti_i[2]" + "wb_cyc_i" + "wb_dat_i[0]" + 
+    "wb_dat_i[10]" + "wb_dat_i[11]" + "wb_dat_i[12]" + "wb_dat_i[13]" + 
+    "wb_dat_i[14]" + "wb_dat_i[15]" + "wb_dat_i[16]" + "wb_dat_i[17]" + 
+    "wb_dat_i[18]" + "wb_dat_i[19]" + "wb_dat_i[1]" + "wb_dat_i[20]" + 
+    "wb_dat_i[21]" + "wb_dat_i[22]" + "wb_dat_i[23]" + "wb_dat_i[24]" + 
+    "wb_dat_i[25]" + "wb_dat_i[26]" + "wb_dat_i[27]" + "wb_dat_i[28]" + 
+    "wb_dat_i[29]" + "wb_dat_i[2]" + "wb_dat_i[30]" + "wb_dat_i[31]" + 
+    "wb_dat_i[3]" + "wb_dat_i[4]" + "wb_dat_i[5]" + "wb_dat_i[6]" + 
+    "wb_dat_i[7]" + "wb_dat_i[8]" + "wb_dat_i[9]" + "wb_rst_i" + "wb_sel_i[0]" + 
+    "wb_sel_i[1]" + "wb_sel_i[2]" + "wb_sel_i[3]" + "wb_stb_i" + "wb_we_i" + 
+    "test_si1" + "test_si2" + "test_si3" + "test_si4" + "test_si5" + "test_si6" 
+    + "test_si7" + "test_si8" + "test_si9" + "test_si10" + "test_si11" + 
+    "test_si12" + "test_si13" + "test_si14" + "test_si15" + "test_si16" + 
+    "test_si17" + "test_si18" + "test_si19" + "test_si20" + "test_si21" + 
+    "test_si22" + "test_si23" + "test_si24" + "test_si25" + "test_si26" + 
+    "test_si27" + "test_si28" + "test_si29" + "test_si30" + "test_si31" + 
+    "test_si32" + "test_si33" + "test_si34" + "test_si35" + "test_si36" + 
+    "test_si37" + "test_si38" + "test_si39" + "test_si40" + "test_si41" + 
+    "test_si42" + "test_si43" + "test_si44" + "test_si45" + "test_si46" + 
+    "test_si47" + "test_si48" + "test_si49" + "test_si50" + "test_se"';
+    "all_outputs" = '"sdr_addr[0]" + "sdr_addr[10]" + "sdr_addr[11]" + 
+    "sdr_addr[12]" + "sdr_addr[1]" + "sdr_addr[2]" + "sdr_addr[3]" + 
+    "sdr_addr[4]" + "sdr_addr[5]" + "sdr_addr[6]" + "sdr_addr[7]" + 
+    "sdr_addr[8]" + "sdr_addr[9]" + "sdr_ba[0]" + "sdr_ba[1]" + "sdr_cas_n" + 
+    "sdr_cke" + "sdr_cs_n" + "sdr_dqm[0]" + "sdr_dqm[1]" + "sdr_init_done" + 
+    "sdr_ras_n" + "sdr_we_n" + "wb_ack_o" + "wb_dat_o[0]" + "wb_dat_o[10]" + 
+    "wb_dat_o[11]" + "wb_dat_o[12]" + "wb_dat_o[13]" + "wb_dat_o[14]" + 
+    "wb_dat_o[15]" + "wb_dat_o[16]" + "wb_dat_o[17]" + "wb_dat_o[18]" + 
+    "wb_dat_o[19]" + "wb_dat_o[1]" + "wb_dat_o[20]" + "wb_dat_o[21]" + 
+    "wb_dat_o[22]" + "wb_dat_o[23]" + "wb_dat_o[24]" + "wb_dat_o[25]" + 
+    "wb_dat_o[26]" + "wb_dat_o[27]" + "wb_dat_o[28]" + "wb_dat_o[29]" + 
+    "wb_dat_o[2]" + "wb_dat_o[30]" + "wb_dat_o[31]" + "wb_dat_o[3]" + 
+    "wb_dat_o[4]" + "wb_dat_o[5]" + "wb_dat_o[6]" + "wb_dat_o[7]" + 
+    "wb_dat_o[8]" + "wb_dat_o[9]" + "test_so1" + "test_so2" + "test_so3" + 
+    "test_so4" + "test_so5" + "test_so6" + "test_so7" + "test_so8" + "test_so9" 
+    + "test_so10" + "test_so11" + "test_so12" + "test_so13" + "test_so14" + 
+    "test_so15" + "test_so16" + "test_so17" + "test_so18" + "test_so19" + 
+    "test_so20" + "test_so21" + "test_so22" + "test_so23" + "test_so24" + 
+    "test_so25" + "test_so26" + "test_so27" + "test_so28" + "test_so29" + 
+    "test_so30" + "test_so31" + "test_so32" + "test_so33" + "test_so34" + 
+    "test_so37" + "test_so39" + "test_so40" + "test_so41" + "test_so42" + 
+    "test_so43" + "test_so44" + "test_so45" + "test_so46" + "test_so47" + 
+    "test_so48" + "test_so49" + "test_so50"';
+    "all_bidirectionals" = '"sdr_dq[0]" + "sdr_dq[10]" + "sdr_dq[11]" + 
+    "sdr_dq[12]" + "sdr_dq[13]" + "sdr_dq[14]" + "sdr_dq[15]" + "sdr_dq[1]" + 
+    "sdr_dq[2]" + "sdr_dq[3]" + "sdr_dq[4]" + "sdr_dq[5]" + "sdr_dq[6]" + 
+    "sdr_dq[7]" + "sdr_dq[8]" + "sdr_dq[9]"';
+    "all_ports" = '"all_inputs" + "all_outputs" + "all_bidirectionals"';
+    "_pi" = '"cfg_colbits[0]" + "cfg_colbits[1]" + "cfg_req_depth[0]" + 
+    "cfg_req_depth[1]" + "cfg_sdr_cas[0]" + "cfg_sdr_cas[1]" + "cfg_sdr_cas[2]" 
+    + "cfg_sdr_en" + "cfg_sdr_mode_reg[0]" + "cfg_sdr_mode_reg[10]" + 
+    "cfg_sdr_mode_reg[11]" + "cfg_sdr_mode_reg[12]" + "cfg_sdr_mode_reg[1]" + 
+    "cfg_sdr_mode_reg[2]" + "cfg_sdr_mode_reg[3]" + "cfg_sdr_mode_reg[4]" + 
+    "cfg_sdr_mode_reg[5]" + "cfg_sdr_mode_reg[6]" + "cfg_sdr_mode_reg[7]" + 
+    "cfg_sdr_mode_reg[8]" + "cfg_sdr_mode_reg[9]" + "cfg_sdr_rfmax[0]" + 
+    "cfg_sdr_rfmax[1]" + "cfg_sdr_rfmax[2]" + "cfg_sdr_rfsh[0]" + 
+    "cfg_sdr_rfsh[10]" + "cfg_sdr_rfsh[11]" + "cfg_sdr_rfsh[1]" + 
+    "cfg_sdr_rfsh[2]" + "cfg_sdr_rfsh[3]" + "cfg_sdr_rfsh[4]" + 
+    "cfg_sdr_rfsh[5]" + "cfg_sdr_rfsh[6]" + "cfg_sdr_rfsh[7]" + 
+    "cfg_sdr_rfsh[8]" + "cfg_sdr_rfsh[9]" + "cfg_sdr_tras_d[0]" + 
+    "cfg_sdr_tras_d[1]" + "cfg_sdr_tras_d[2]" + "cfg_sdr_tras_d[3]" + 
+    "cfg_sdr_trcar_d[0]" + "cfg_sdr_trcar_d[1]" + "cfg_sdr_trcar_d[2]" + 
+    "cfg_sdr_trcar_d[3]" + "cfg_sdr_trcd_d[0]" + "cfg_sdr_trcd_d[1]" + 
+    "cfg_sdr_trcd_d[2]" + "cfg_sdr_trcd_d[3]" + "cfg_sdr_trp_d[0]" + 
+    "cfg_sdr_trp_d[1]" + "cfg_sdr_trp_d[2]" + "cfg_sdr_trp_d[3]" + 
+    "cfg_sdr_twr_d[0]" + "cfg_sdr_twr_d[1]" + "cfg_sdr_twr_d[2]" + 
+    "cfg_sdr_twr_d[3]" + "cfg_sdr_width[0]" + "cfg_sdr_width[1]" + "sdram_clk" + 
+    "sdram_resetn" + "wb_addr_i[0]" + "wb_addr_i[10]" + "wb_addr_i[11]" + 
+    "wb_addr_i[12]" + "wb_addr_i[13]" + "wb_addr_i[14]" + "wb_addr_i[15]" + 
+    "wb_addr_i[16]" + "wb_addr_i[17]" + "wb_addr_i[18]" + "wb_addr_i[19]" + 
+    "wb_addr_i[1]" + "wb_addr_i[20]" + "wb_addr_i[21]" + "wb_addr_i[22]" + 
+    "wb_addr_i[23]" + "wb_addr_i[24]" + "wb_addr_i[25]" + "wb_addr_i[2]" + 
+    "wb_addr_i[3]" + "wb_addr_i[4]" + "wb_addr_i[5]" + "wb_addr_i[6]" + 
+    "wb_addr_i[7]" + "wb_addr_i[8]" + "wb_addr_i[9]" + "wb_clk_i" + 
+    "wb_cti_i[0]" + "wb_cti_i[1]" + "wb_cti_i[2]" + "wb_cyc_i" + "wb_dat_i[0]" + 
+    "wb_dat_i[10]" + "wb_dat_i[11]" + "wb_dat_i[12]" + "wb_dat_i[13]" + 
+    "wb_dat_i[14]" + "wb_dat_i[15]" + "wb_dat_i[16]" + "wb_dat_i[17]" + 
+    "wb_dat_i[18]" + "wb_dat_i[19]" + "wb_dat_i[1]" + "wb_dat_i[20]" + 
+    "wb_dat_i[21]" + "wb_dat_i[22]" + "wb_dat_i[23]" + "wb_dat_i[24]" + 
+    "wb_dat_i[25]" + "wb_dat_i[26]" + "wb_dat_i[27]" + "wb_dat_i[28]" + 
+    "wb_dat_i[29]" + "wb_dat_i[2]" + "wb_dat_i[30]" + "wb_dat_i[31]" + 
+    "wb_dat_i[3]" + "wb_dat_i[4]" + "wb_dat_i[5]" + "wb_dat_i[6]" + 
+    "wb_dat_i[7]" + "wb_dat_i[8]" + "wb_dat_i[9]" + "wb_rst_i" + "wb_sel_i[0]" + 
+    "wb_sel_i[1]" + "wb_sel_i[2]" + "wb_sel_i[3]" + "wb_stb_i" + "wb_we_i" + 
+    "sdr_dq[0]" + "sdr_dq[10]" + "sdr_dq[11]" + "sdr_dq[12]" + "sdr_dq[13]" + 
+    "sdr_dq[14]" + "sdr_dq[15]" + "sdr_dq[1]" + "sdr_dq[2]" + "sdr_dq[3]" + 
+    "sdr_dq[4]" + "sdr_dq[5]" + "sdr_dq[6]" + "sdr_dq[7]" + "sdr_dq[8]" + 
+    "sdr_dq[9]" + "test_si1" + "test_si2" + "test_si3" + "test_si4" + "test_si5" 
+    + "test_si6" + "test_si7" + "test_si8" + "test_si9" + "test_si10" + 
+    "test_si11" + "test_si12" + "test_si13" + "test_si14" + "test_si15" + 
+    "test_si16" + "test_si17" + "test_si18" + "test_si19" + "test_si20" + 
+    "test_si21" + "test_si22" + "test_si23" + "test_si24" + "test_si25" + 
+    "test_si26" + "test_si27" + "test_si28" + "test_si29" + "test_si30" + 
+    "test_si31" + "test_si32" + "test_si33" + "test_si34" + "test_si35" + 
+    "test_si36" + "test_si37" + "test_si38" + "test_si39" + "test_si40" + 
+    "test_si41" + "test_si42" + "test_si43" + "test_si44" + "test_si45" + 
+    "test_si46" + "test_si47" + "test_si48" + "test_si49" + "test_si50" + 
+    "test_se"';
+    "_po" = '"sdr_addr[0]" + "sdr_addr[10]" + "sdr_addr[11]" + "sdr_addr[12]" + 
+    "sdr_addr[1]" + "sdr_addr[2]" + "sdr_addr[3]" + "sdr_addr[4]" + 
+    "sdr_addr[5]" + "sdr_addr[6]" + "sdr_addr[7]" + "sdr_addr[8]" + 
+    "sdr_addr[9]" + "sdr_ba[0]" + "sdr_ba[1]" + "sdr_cas_n" + "sdr_cke" + 
+    "sdr_cs_n" + "sdr_dqm[0]" + "sdr_dqm[1]" + "sdr_init_done" + "sdr_ras_n" + 
+    "sdr_we_n" + "wb_ack_o" + "wb_dat_o[0]" + "wb_dat_o[10]" + "wb_dat_o[11]" + 
+    "wb_dat_o[12]" + "wb_dat_o[13]" + "wb_dat_o[14]" + "wb_dat_o[15]" + 
+    "wb_dat_o[16]" + "wb_dat_o[17]" + "wb_dat_o[18]" + "wb_dat_o[19]" + 
+    "wb_dat_o[1]" + "wb_dat_o[20]" + "wb_dat_o[21]" + "wb_dat_o[22]" + 
+    "wb_dat_o[23]" + "wb_dat_o[24]" + "wb_dat_o[25]" + "wb_dat_o[26]" + 
+    "wb_dat_o[27]" + "wb_dat_o[28]" + "wb_dat_o[29]" + "wb_dat_o[2]" + 
+    "wb_dat_o[30]" + "wb_dat_o[31]" + "wb_dat_o[3]" + "wb_dat_o[4]" + 
+    "wb_dat_o[5]" + "wb_dat_o[6]" + "wb_dat_o[7]" + "wb_dat_o[8]" + 
+    "wb_dat_o[9]" + "sdr_dq[0]" + "sdr_dq[10]" + "sdr_dq[11]" + "sdr_dq[12]" + 
+    "sdr_dq[13]" + "sdr_dq[14]" + "sdr_dq[15]" + "sdr_dq[1]" + "sdr_dq[2]" + 
+    "sdr_dq[3]" + "sdr_dq[4]" + "sdr_dq[5]" + "sdr_dq[6]" + "sdr_dq[7]" + 
+    "sdr_dq[8]" + "sdr_dq[9]" + "test_so1" + "test_so2" + "test_so3" + 
+    "test_so4" + "test_so5" + "test_so6" + "test_so7" + "test_so8" + "test_so9" 
+    + "test_so10" + "test_so11" + "test_so12" + "test_so13" + "test_so14" + 
+    "test_so15" + "test_so16" + "test_so17" + "test_so18" + "test_so19" + 
+    "test_so20" + "test_so21" + "test_so22" + "test_so23" + "test_so24" + 
+    "test_so25" + "test_so26" + "test_so27" + "test_so28" + "test_so29" + 
+    "test_so30" + "test_so31" + "test_so32" + "test_so33" + "test_so34" + 
+    "test_so37" + "test_so39" + "test_so40" + "test_so41" + "test_so42" + 
+    "test_so43" + "test_so44" + "test_so45" + "test_so46" + "test_so47" + 
+    "test_so48" + "test_so49" + "test_so50"';
+}
+ScanStructures {
+    ScanChain "1" {
+        ScanLength 24;
+        ScanIn "test_si1";
+        ScanOut "test_so1";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "2" {
+        ScanLength 25;
+        ScanIn "test_si2";
+        ScanOut "test_so2";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "3" {
+        ScanLength 25;
+        ScanIn "test_si3";
+        ScanOut "test_so3";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "4" {
+        ScanLength 24;
+        ScanIn "test_si4";
+        ScanOut "test_so4";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "5" {
+        ScanLength 25;
+        ScanIn "test_si5";
+        ScanOut "test_so5";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "6" {
+        ScanLength 25;
+        ScanIn "test_si6";
+        ScanOut "test_so6";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "7" {
+        ScanLength 24;
+        ScanIn "test_si7";
+        ScanOut "test_so7";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "8" {
+        ScanLength 25;
+        ScanIn "test_si8";
+        ScanOut "test_so8";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "9" {
+        ScanLength 24;
+        ScanIn "test_si9";
+        ScanOut "test_so9";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "10" {
+        ScanLength 25;
+        ScanIn "test_si10";
+        ScanOut "test_so10";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "11" {
+        ScanLength 25;
+        ScanIn "test_si11";
+        ScanOut "test_so11";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "12" {
+        ScanLength 24;
+        ScanIn "test_si12";
+        ScanOut "test_so12";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "13" {
+        ScanLength 25;
+        ScanIn "test_si13";
+        ScanOut "test_so13";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "14" {
+        ScanLength 24;
+        ScanIn "test_si14";
+        ScanOut "test_so14";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "15" {
+        ScanLength 25;
+        ScanIn "test_si15";
+        ScanOut "test_so15";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "16" {
+        ScanLength 25;
+        ScanIn "test_si16";
+        ScanOut "test_so16";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "17" {
+        ScanLength 24;
+        ScanIn "test_si17";
+        ScanOut "test_so17";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "18" {
+        ScanLength 25;
+        ScanIn "test_si18";
+        ScanOut "test_so18";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "19" {
+        ScanLength 24;
+        ScanIn "test_si19";
+        ScanOut "test_so19";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "20" {
+        ScanLength 25;
+        ScanIn "test_si20";
+        ScanOut "test_so20";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "21" {
+        ScanLength 25;
+        ScanIn "test_si21";
+        ScanOut "test_so21";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "22" {
+        ScanLength 24;
+        ScanIn "test_si22";
+        ScanOut "test_so22";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "23" {
+        ScanLength 25;
+        ScanIn "test_si23";
+        ScanOut "test_so23";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "24" {
+        ScanLength 24;
+        ScanIn "test_si24";
+        ScanOut "test_so24";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "25" {
+        ScanLength 25;
+        ScanIn "test_si25";
+        ScanOut "test_so25";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "26" {
+        ScanLength 25;
+        ScanIn "test_si26";
+        ScanOut "test_so26";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "27" {
+        ScanLength 24;
+        ScanIn "test_si27";
+        ScanOut "test_so27";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "28" {
+        ScanLength 25;
+        ScanIn "test_si28";
+        ScanOut "test_so28";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "29" {
+        ScanLength 24;
+        ScanIn "test_si29";
+        ScanOut "test_so29";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "30" {
+        ScanLength 25;
+        ScanIn "test_si30";
+        ScanOut "test_so30";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "31" {
+        ScanLength 25;
+        ScanIn "test_si31";
+        ScanOut "test_so31";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "32" {
+        ScanLength 24;
+        ScanIn "test_si32";
+        ScanOut "test_so32";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "33" {
+        ScanLength 24;
+        ScanIn "test_si33";
+        ScanOut "test_so33";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "34" {
+        ScanLength 24;
+        ScanIn "test_si34";
+        ScanOut "test_so34";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "35" {
+        ScanLength 24;
+        ScanIn "test_si35";
+        ScanOut "sdr_addr[11]";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "36" {
+        ScanLength 24;
+        ScanIn "test_si36";
+        ScanOut "sdr_cs_n";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "37" {
+        ScanLength 24;
+        ScanIn "test_si37";
+        ScanOut "test_so37";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "38" {
+        ScanLength 24;
+        ScanIn "test_si38";
+        ScanOut "sdr_we_n";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "39" {
+        ScanLength 24;
+        ScanIn "test_si39";
+        ScanOut "test_so39";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "40" {
+        ScanLength 23;
+        ScanIn "test_si40";
+        ScanOut "test_so40";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "41" {
+        ScanLength 24;
+        ScanIn "test_si41";
+        ScanOut "test_so41";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "42" {
+        ScanLength 23;
+        ScanIn "test_si42";
+        ScanOut "test_so42";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "43" {
+        ScanLength 24;
+        ScanIn "test_si43";
+        ScanOut "test_so43";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "44" {
+        ScanLength 24;
+        ScanIn "test_si44";
+        ScanOut "test_so44";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "45" {
+        ScanLength 23;
+        ScanIn "test_si45";
+        ScanOut "test_so45";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "46" {
+        ScanLength 24;
+        ScanIn "test_si46";
+        ScanOut "test_so46";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "47" {
+        ScanLength 23;
+        ScanIn "test_si47";
+        ScanOut "test_so47";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+    ScanChain "48" {
+        ScanLength 24;
+        ScanIn "test_si48";
+        ScanOut "test_so48";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "49" {
+        ScanLength 24;
+        ScanIn "test_si49";
+        ScanOut "test_so49";
+        ScanEnable "test_se";
+        ScanMasterClock "sdram_clk";
+    }
+    ScanChain "50" {
+        ScanLength 23;
+        ScanIn "test_si50";
+        ScanOut "test_so50";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
+}
+Timing {
+    WaveformTable "_default_WFT_" {
+        Period '10ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '2ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '2ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '2ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '2ns' L;
+                }
+            }
+            "sdram_clk" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "wb_clk_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_resetn" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "wb_rst_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "all_bidirectionals" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_bidirectionals" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_bidirectionals" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_bidirectionals" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                X {
+                    '0ns' Z;
+                    '2ns' X;
+                }
+            }
+            "all_bidirectionals" {
+                H {
+                    '0ns' Z;
+                    '2ns' H;
+                }
+            }
+            "all_bidirectionals" {
+                T {
+                    '0ns' Z;
+                    '2ns' T;
+                }
+            }
+            "all_bidirectionals" {
+                L {
+                    '0ns' Z;
+                    '2ns' L;
+                }
+            }
+        }
+    }
+    WaveformTable "_multiclock_capture_WFT_" {
+        Period '10ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_bidirectionals" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_bidirectionals" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_bidirectionals" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                X {
+                    '0ns' Z;
+                    '2ns' X;
+                }
+            }
+            "all_bidirectionals" {
+                H {
+                    '0ns' Z;
+                    '2ns' H;
+                }
+            }
+            "all_bidirectionals" {
+                T {
+                    '0ns' Z;
+                    '2ns' T;
+                }
+            }
+            "all_bidirectionals" {
+                L {
+                    '0ns' Z;
+                    '2ns' L;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '2ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '2ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '2ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '2ns' L;
+                }
+            }
+            "wb_clk_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_clk" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "wb_rst_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_resetn" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+        }
+    }
+    WaveformTable "_allclock_capture_WFT_" {
+        Period '10ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_bidirectionals" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_bidirectionals" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_bidirectionals" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                X {
+                    '0ns' Z;
+                    '2ns' X;
+                }
+            }
+            "all_bidirectionals" {
+                H {
+                    '0ns' Z;
+                    '2ns' H;
+                }
+            }
+            "all_bidirectionals" {
+                T {
+                    '0ns' Z;
+                    '2ns' T;
+                }
+            }
+            "all_bidirectionals" {
+                L {
+                    '0ns' Z;
+                    '2ns' L;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '2ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '2ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '2ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '2ns' L;
+                }
+            }
+            "wb_clk_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_clk" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "wb_rst_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_resetn" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+        }
+    }
+    WaveformTable "_allclock_launch_WFT_" {
+        Period '10ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_bidirectionals" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_bidirectionals" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_bidirectionals" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                X {
+                    '0ns' Z;
+                    '2ns' X;
+                }
+            }
+            "all_bidirectionals" {
+                H {
+                    '0ns' Z;
+                    '2ns' H;
+                }
+            }
+            "all_bidirectionals" {
+                T {
+                    '0ns' Z;
+                    '2ns' T;
+                }
+            }
+            "all_bidirectionals" {
+                L {
+                    '0ns' Z;
+                    '2ns' L;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '2ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '2ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '2ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '2ns' L;
+                }
+            }
+            "wb_clk_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_clk" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "wb_rst_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_resetn" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+        }
+    }
+    WaveformTable "_allclock_launch_capture_WFT_" {
+        Period '10ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_bidirectionals" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_bidirectionals" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_bidirectionals" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_bidirectionals" {
+                X {
+                    '0ns' Z;
+                    '2ns' X;
+                }
+            }
+            "all_bidirectionals" {
+                H {
+                    '0ns' Z;
+                    '2ns' H;
+                }
+            }
+            "all_bidirectionals" {
+                T {
+                    '0ns' Z;
+                    '2ns' T;
+                }
+            }
+            "all_bidirectionals" {
+                L {
+                    '0ns' Z;
+                    '2ns' L;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '2ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '2ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '2ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '2ns' L;
+                }
+            }
+            "wb_clk_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_clk" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "wb_rst_i" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+            "sdram_resetn" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
+                }
+            }
+        }
+    }
+}
+Procedures {
+    "multiclock_capture" {
+        W "_multiclock_capture_WFT_";
+        C {
+            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
+            "all_outputs" = \r103 X;
+            "all_bidirectionals" = \r16 Z;
+        }
+        V {
+            "_pi" = \r197 #;
+            "_po" = \r119 #;
+        }
+    }
+    "allclock_capture" {
+        W "_allclock_capture_WFT_";
+        C {
+            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
+            "all_outputs" = \r103 X;
+            "all_bidirectionals" = \r16 Z;
+        }
+        V {
+            "_pi" = \r197 #;
+            "_po" = \r119 #;
+        }
+    }
+    "allclock_launch" {
+        W "_allclock_launch_WFT_";
+        C {
+            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
+            "all_outputs" = \r103 X;
+            "all_bidirectionals" = \r16 Z;
+        }
+        V {
+            "_pi" = \r197 #;
+            "_po" = \r119 #;
+        }
+    }
+    "allclock_launch_capture" {
+        W "_allclock_launch_capture_WFT_";
+        C {
+            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
+            "all_outputs" = \r103 X;
+            "all_bidirectionals" = \r16 Z;
+        }
+        V {
+            "_pi" = \r197 #;
+            "_po" = \r119 #;
+        }
+    }
+    "load_unload" {
+        W "_default_WFT_";
+        C {
+            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
+            "all_outputs" = \r103 X;
+            "all_bidirectionals" = \r16 Z;
+        }
+        "Internal_scan_pre_shift" : V {
+            "test_se" = 1;
+        }
+        Shift {
+            V {
+                "_clk" = P0P0;
+                "_si" = \r50 #;
+                "_so" = \r50 #;
+            }
+        }
+    }
+}
+MacroDefs {
+    "test_setup" {
+        W "_default_WFT_";
+        C {
+            "all_inputs" = \r181 N;
+            "all_outputs" = \r103 X;
+            "all_bidirectionals" = \r16 Z;
+        }
+        V {
+            "sdram_clk" = 0;
+            "sdram_resetn" = 0;
+            "wb_clk_i" = 0;
+            "wb_rst_i" = 0;
+        }
+        V {
+        }
+    }
+}
+
