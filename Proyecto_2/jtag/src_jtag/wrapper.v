@@ -75,13 +75,6 @@ module wrapper (cfg_sdr_width, cfg_colbits, Port3, wb_clk_i, wb_stb_i,
   assign		TDO = enableTDO ? selectIR ? IR_scan_out : TDR_out : 1'bz;
   assign 	TDR_out = select_BR ? BR_scan_out : BSR_scan_out;
 
-ASIC M0 (
-    .sum (BSC_Interface [13: 10]),
-    .c_out (BSC_Interface [9]), 
-    .a (BSC_Interface [8: 5]),
-    .b (BSC_Interface [4: 1]),
-    .c_in (BSC_Interface [0]));
-
     sdrc_top M0(
 	/*Define Inputs*/
 	.wb_clk_i          (BSC_Interface [0]), 

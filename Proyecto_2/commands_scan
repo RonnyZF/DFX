@@ -7,7 +7,7 @@ set test_default_bidir_delay 0
 set test_default_delay 0
 set test_default_scan_style "multiplexed_flip_flop"
 set test_default_strobe 2
-analyze -format verilog -lib WORk {../Proyecto/DUT_2/async_fifo.v ../Proyecto/DUT_2/sdrc_bank_ctl.v ../Proyecto/DUT_2/sdrc_bank_fsm.v ../Proyecto/DUT_2/sdrc_bs_convert.v ../Proyecto/DUT_2/sdrc_core.v ../Proyecto/DUT_2/sdrc_define.v ../Proyecto/DUT_2/sdrc_req_gen.v ../Proyecto/DUT_2/sdrc_top.v ../Proyecto/DUT_2/sdrc_xfr_ctl.v ../Proyecto/DUT_2/sync_fifo.v ../Proyecto/DUT_2/wb2sdrc.v}
+analyze -format verilog -lib WORk {../src/async_fifo.v ../src/sdrc_bank_ctl.v ../src/sdrc_bank_fsm.v ../src/sdrc_bs_convert.v ../src/sdrc_core.v ../src/sdrc_define.v ../src/sdrc_req_gen.v ../src/sdrc_top.v ../src/sdrc_xfr_ctl.v ../src/sync_fifo.v ../src/wb2sdrc.v}
 elaborate sdrc_top -lib WORK -update
 link
 uniquify

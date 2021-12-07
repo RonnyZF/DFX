@@ -3,7 +3,7 @@ STIL 1.0 {
 }
 Header {
     Title "Minimal STIL for design `sdrc_top'";
-    Date "Thu Dec  2 16:32:40 2021";
+    Date "Fri Dec  3 15:34:15 2021";
     Source "DFT Compiler R-2020.09-SP5-1";
 }
 Signals {
@@ -209,6 +209,8 @@ Signals {
     "sdr_dq[7]" InOut;
     "sdr_dq[8]" InOut;
     "sdr_dq[9]" InOut;
+    "data_source" In;
+    "test_mode" In;
     "test_si1" In;
     "test_so1" Out;
     "test_si2" In;
@@ -244,9 +246,7 @@ Signals {
     "test_si17" In;
     "test_so17" Out;
     "test_si18" In;
-    "test_so18" Out;
     "test_si19" In;
-    "test_so19" Out;
     "test_si20" In;
     "test_so20" Out;
     "test_si21" In;
@@ -261,51 +261,6 @@ Signals {
     "test_so25" Out;
     "test_si26" In;
     "test_so26" Out;
-    "test_si27" In;
-    "test_so27" Out;
-    "test_si28" In;
-    "test_so28" Out;
-    "test_si29" In;
-    "test_so29" Out;
-    "test_si30" In;
-    "test_so30" Out;
-    "test_si31" In;
-    "test_so31" Out;
-    "test_si32" In;
-    "test_so32" Out;
-    "test_si33" In;
-    "test_so33" Out;
-    "test_si34" In;
-    "test_so34" Out;
-    "test_si35" In;
-    "test_si36" In;
-    "test_si37" In;
-    "test_so37" Out;
-    "test_si38" In;
-    "test_si39" In;
-    "test_so39" Out;
-    "test_si40" In;
-    "test_so40" Out;
-    "test_si41" In;
-    "test_so41" Out;
-    "test_si42" In;
-    "test_so42" Out;
-    "test_si43" In;
-    "test_so43" Out;
-    "test_si44" In;
-    "test_so44" Out;
-    "test_si45" In;
-    "test_so45" Out;
-    "test_si46" In;
-    "test_so46" Out;
-    "test_si47" In;
-    "test_so47" Out;
-    "test_si48" In;
-    "test_so48" Out;
-    "test_si49" In;
-    "test_so49" Out;
-    "test_si50" In;
-    "test_so50" Out;
     "test_se" In;
 }
 SignalGroups {
@@ -314,26 +269,17 @@ SignalGroups {
     "test_si11" + "test_si12" + "test_si13" + "test_si14" + "test_si15" + 
     "test_si16" + "test_si17" + "test_si18" + "test_si19" + "test_si20" + 
     "test_si21" + "test_si22" + "test_si23" + "test_si24" + "test_si25" + 
-    "test_si26" + "test_si27" + "test_si28" + "test_si29" + "test_si30" + 
-    "test_si31" + "test_si32" + "test_si33" + "test_si34" + "test_si35" + 
-    "test_si36" + "test_si37" + "test_si38" + "test_si39" + "test_si40" + 
-    "test_si41" + "test_si42" + "test_si43" + "test_si44" + "test_si45" + 
-    "test_si46" + "test_si47" + "test_si48" + "test_si49" + "test_si50"' {
+    "test_si26"' {
         ScanIn;
     }
-    "_so" = '"sdr_addr[11]" + "sdr_cs_n" + "sdr_we_n" + "test_so1" + "test_so2" 
-    + "test_so3" + "test_so4" + "test_so5" + "test_so6" + "test_so7" + 
-    "test_so8" + "test_so9" + "test_so10" + "test_so11" + "test_so12" + 
-    "test_so13" + "test_so14" + "test_so15" + "test_so16" + "test_so17" + 
-    "test_so18" + "test_so19" + "test_so20" + "test_so21" + "test_so22" + 
-    "test_so23" + "test_so24" + "test_so25" + "test_so26" + "test_so27" + 
-    "test_so28" + "test_so29" + "test_so30" + "test_so31" + "test_so32" + 
-    "test_so33" + "test_so34" + "test_so37" + "test_so39" + "test_so40" + 
-    "test_so41" + "test_so42" + "test_so43" + "test_so44" + "test_so45" + 
-    "test_so46" + "test_so47" + "test_so48" + "test_so49" + "test_so50"' {
+    "_so" = '"sdr_cs_n" + "sdr_we_n" + "test_so1" + "test_so2" + "test_so3" + 
+    "test_so4" + "test_so5" + "test_so6" + "test_so7" + "test_so8" + "test_so9" 
+    + "test_so10" + "test_so11" + "test_so12" + "test_so13" + "test_so14" + 
+    "test_so15" + "test_so16" + "test_so17" + "test_so20" + "test_so21" + 
+    "test_so22" + "test_so23" + "test_so24" + "test_so25" + "test_so26"' {
         ScanOut;
     }
-    "_clk" = '"sdram_clk" + "sdram_resetn" + "wb_clk_i" + "wb_rst_i"';
+    "_clk" = '"sdram_clk" + "wb_clk_i"';
     "all_inputs" = '"cfg_colbits[0]" + "cfg_colbits[1]" + "cfg_req_depth[0]" + 
     "cfg_req_depth[1]" + "cfg_sdr_cas[0]" + "cfg_sdr_cas[1]" + "cfg_sdr_cas[2]" 
     + "cfg_sdr_en" + "cfg_sdr_mode_reg[0]" + "cfg_sdr_mode_reg[10]" + 
@@ -370,16 +316,12 @@ SignalGroups {
     "wb_dat_i[3]" + "wb_dat_i[4]" + "wb_dat_i[5]" + "wb_dat_i[6]" + 
     "wb_dat_i[7]" + "wb_dat_i[8]" + "wb_dat_i[9]" + "wb_rst_i" + "wb_sel_i[0]" + 
     "wb_sel_i[1]" + "wb_sel_i[2]" + "wb_sel_i[3]" + "wb_stb_i" + "wb_we_i" + 
-    "test_si1" + "test_si2" + "test_si3" + "test_si4" + "test_si5" + "test_si6" 
-    + "test_si7" + "test_si8" + "test_si9" + "test_si10" + "test_si11" + 
-    "test_si12" + "test_si13" + "test_si14" + "test_si15" + "test_si16" + 
-    "test_si17" + "test_si18" + "test_si19" + "test_si20" + "test_si21" + 
-    "test_si22" + "test_si23" + "test_si24" + "test_si25" + "test_si26" + 
-    "test_si27" + "test_si28" + "test_si29" + "test_si30" + "test_si31" + 
-    "test_si32" + "test_si33" + "test_si34" + "test_si35" + "test_si36" + 
-    "test_si37" + "test_si38" + "test_si39" + "test_si40" + "test_si41" + 
-    "test_si42" + "test_si43" + "test_si44" + "test_si45" + "test_si46" + 
-    "test_si47" + "test_si48" + "test_si49" + "test_si50" + "test_se"';
+    "data_source" + "test_mode" + "test_si1" + "test_si2" + "test_si3" + 
+    "test_si4" + "test_si5" + "test_si6" + "test_si7" + "test_si8" + "test_si9" 
+    + "test_si10" + "test_si11" + "test_si12" + "test_si13" + "test_si14" + 
+    "test_si15" + "test_si16" + "test_si17" + "test_si18" + "test_si19" + 
+    "test_si20" + "test_si21" + "test_si22" + "test_si23" + "test_si24" + 
+    "test_si25" + "test_si26" + "test_se"';
     "all_outputs" = '"sdr_addr[0]" + "sdr_addr[10]" + "sdr_addr[11]" + 
     "sdr_addr[12]" + "sdr_addr[1]" + "sdr_addr[2]" + "sdr_addr[3]" + 
     "sdr_addr[4]" + "sdr_addr[5]" + "sdr_addr[6]" + "sdr_addr[7]" + 
@@ -396,13 +338,8 @@ SignalGroups {
     "wb_dat_o[8]" + "wb_dat_o[9]" + "test_so1" + "test_so2" + "test_so3" + 
     "test_so4" + "test_so5" + "test_so6" + "test_so7" + "test_so8" + "test_so9" 
     + "test_so10" + "test_so11" + "test_so12" + "test_so13" + "test_so14" + 
-    "test_so15" + "test_so16" + "test_so17" + "test_so18" + "test_so19" + 
-    "test_so20" + "test_so21" + "test_so22" + "test_so23" + "test_so24" + 
-    "test_so25" + "test_so26" + "test_so27" + "test_so28" + "test_so29" + 
-    "test_so30" + "test_so31" + "test_so32" + "test_so33" + "test_so34" + 
-    "test_so37" + "test_so39" + "test_so40" + "test_so41" + "test_so42" + 
-    "test_so43" + "test_so44" + "test_so45" + "test_so46" + "test_so47" + 
-    "test_so48" + "test_so49" + "test_so50"';
+    "test_so15" + "test_so16" + "test_so17" + "test_so20" + "test_so21" + 
+    "test_so22" + "test_so23" + "test_so24" + "test_so25" + "test_so26"';
     "all_bidirectionals" = '"sdr_dq[0]" + "sdr_dq[10]" + "sdr_dq[11]" + 
     "sdr_dq[12]" + "sdr_dq[13]" + "sdr_dq[14]" + "sdr_dq[15]" + "sdr_dq[1]" + 
     "sdr_dq[2]" + "sdr_dq[3]" + "sdr_dq[4]" + "sdr_dq[5]" + "sdr_dq[6]" + 
@@ -447,17 +384,12 @@ SignalGroups {
     "sdr_dq[0]" + "sdr_dq[10]" + "sdr_dq[11]" + "sdr_dq[12]" + "sdr_dq[13]" + 
     "sdr_dq[14]" + "sdr_dq[15]" + "sdr_dq[1]" + "sdr_dq[2]" + "sdr_dq[3]" + 
     "sdr_dq[4]" + "sdr_dq[5]" + "sdr_dq[6]" + "sdr_dq[7]" + "sdr_dq[8]" + 
-    "sdr_dq[9]" + "test_si1" + "test_si2" + "test_si3" + "test_si4" + "test_si5" 
-    + "test_si6" + "test_si7" + "test_si8" + "test_si9" + "test_si10" + 
-    "test_si11" + "test_si12" + "test_si13" + "test_si14" + "test_si15" + 
-    "test_si16" + "test_si17" + "test_si18" + "test_si19" + "test_si20" + 
-    "test_si21" + "test_si22" + "test_si23" + "test_si24" + "test_si25" + 
-    "test_si26" + "test_si27" + "test_si28" + "test_si29" + "test_si30" + 
-    "test_si31" + "test_si32" + "test_si33" + "test_si34" + "test_si35" + 
-    "test_si36" + "test_si37" + "test_si38" + "test_si39" + "test_si40" + 
-    "test_si41" + "test_si42" + "test_si43" + "test_si44" + "test_si45" + 
-    "test_si46" + "test_si47" + "test_si48" + "test_si49" + "test_si50" + 
-    "test_se"';
+    "sdr_dq[9]" + "data_source" + "test_mode" + "test_si1" + "test_si2" + 
+    "test_si3" + "test_si4" + "test_si5" + "test_si6" + "test_si7" + "test_si8" 
+    + "test_si9" + "test_si10" + "test_si11" + "test_si12" + "test_si13" + 
+    "test_si14" + "test_si15" + "test_si16" + "test_si17" + "test_si18" + 
+    "test_si19" + "test_si20" + "test_si21" + "test_si22" + "test_si23" + 
+    "test_si24" + "test_si25" + "test_si26" + "test_se"';
     "_po" = '"sdr_addr[0]" + "sdr_addr[10]" + "sdr_addr[11]" + "sdr_addr[12]" + 
     "sdr_addr[1]" + "sdr_addr[2]" + "sdr_addr[3]" + "sdr_addr[4]" + 
     "sdr_addr[5]" + "sdr_addr[6]" + "sdr_addr[7]" + "sdr_addr[8]" + 
@@ -477,364 +409,191 @@ SignalGroups {
     "sdr_dq[8]" + "sdr_dq[9]" + "test_so1" + "test_so2" + "test_so3" + 
     "test_so4" + "test_so5" + "test_so6" + "test_so7" + "test_so8" + "test_so9" 
     + "test_so10" + "test_so11" + "test_so12" + "test_so13" + "test_so14" + 
-    "test_so15" + "test_so16" + "test_so17" + "test_so18" + "test_so19" + 
-    "test_so20" + "test_so21" + "test_so22" + "test_so23" + "test_so24" + 
-    "test_so25" + "test_so26" + "test_so27" + "test_so28" + "test_so29" + 
-    "test_so30" + "test_so31" + "test_so32" + "test_so33" + "test_so34" + 
-    "test_so37" + "test_so39" + "test_so40" + "test_so41" + "test_so42" + 
-    "test_so43" + "test_so44" + "test_so45" + "test_so46" + "test_so47" + 
-    "test_so48" + "test_so49" + "test_so50"';
+    "test_so15" + "test_so16" + "test_so17" + "test_so20" + "test_so21" + 
+    "test_so22" + "test_so23" + "test_so24" + "test_so25" + "test_so26"';
 }
 ScanStructures {
     ScanChain "1" {
-        ScanLength 24;
+        ScanLength 48;
         ScanIn "test_si1";
         ScanOut "test_so1";
         ScanEnable "test_se";
         ScanMasterClock "wb_clk_i";
     }
     ScanChain "2" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si2";
         ScanOut "test_so2";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "3" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si3";
         ScanOut "test_so3";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "4" {
-        ScanLength 24;
+        ScanLength 48;
         ScanIn "test_si4";
         ScanOut "test_so4";
         ScanEnable "test_se";
         ScanMasterClock "wb_clk_i";
     }
     ScanChain "5" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si5";
         ScanOut "test_so5";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "6" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si6";
         ScanOut "test_so6";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "7" {
-        ScanLength 24;
+        ScanLength 48;
         ScanIn "test_si7";
         ScanOut "test_so7";
         ScanEnable "test_se";
         ScanMasterClock "wb_clk_i";
     }
     ScanChain "8" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si8";
         ScanOut "test_so8";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "9" {
-        ScanLength 24;
+        ScanLength 48;
         ScanIn "test_si9";
         ScanOut "test_so9";
         ScanEnable "test_se";
         ScanMasterClock "wb_clk_i";
     }
     ScanChain "10" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si10";
         ScanOut "test_so10";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "11" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si11";
         ScanOut "test_so11";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "12" {
-        ScanLength 24;
+        ScanLength 48;
         ScanIn "test_si12";
         ScanOut "test_so12";
         ScanEnable "test_se";
         ScanMasterClock "wb_clk_i";
     }
     ScanChain "13" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si13";
         ScanOut "test_so13";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "14" {
-        ScanLength 24;
+        ScanLength 49;
         ScanIn "test_si14";
         ScanOut "test_so14";
         ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
+        ScanMasterClock "sdram_clk";
     }
     ScanChain "15" {
-        ScanLength 25;
+        ScanLength 47;
         ScanIn "test_si15";
         ScanOut "test_so15";
         ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
+        ScanMasterClock "wb_clk_i";
     }
     ScanChain "16" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si16";
         ScanOut "test_so16";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "17" {
-        ScanLength 24;
+        ScanLength 47;
         ScanIn "test_si17";
         ScanOut "test_so17";
         ScanEnable "test_se";
         ScanMasterClock "wb_clk_i";
     }
     ScanChain "18" {
-        ScanLength 25;
+        ScanLength 49;
         ScanIn "test_si18";
-        ScanOut "test_so18";
+        ScanOut "sdr_cs_n";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "19" {
-        ScanLength 24;
+        ScanLength 49;
         ScanIn "test_si19";
-        ScanOut "test_so19";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "20" {
-        ScanLength 25;
-        ScanIn "test_si20";
-        ScanOut "test_so20";
+        ScanOut "sdr_we_n";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
+    ScanChain "20" {
+        ScanLength 47;
+        ScanIn "test_si20";
+        ScanOut "test_so20";
+        ScanEnable "test_se";
+        ScanMasterClock "wb_clk_i";
+    }
     ScanChain "21" {
-        ScanLength 25;
+        ScanLength 48;
         ScanIn "test_si21";
         ScanOut "test_so21";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "22" {
-        ScanLength 24;
+        ScanLength 47;
         ScanIn "test_si22";
         ScanOut "test_so22";
         ScanEnable "test_se";
         ScanMasterClock "wb_clk_i";
     }
     ScanChain "23" {
-        ScanLength 25;
+        ScanLength 48;
         ScanIn "test_si23";
         ScanOut "test_so23";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
     }
     ScanChain "24" {
-        ScanLength 24;
+        ScanLength 48;
         ScanIn "test_si24";
         ScanOut "test_so24";
         ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
+        ScanMasterClock "sdram_clk";
     }
     ScanChain "25" {
-        ScanLength 25;
+        ScanLength 47;
         ScanIn "test_si25";
         ScanOut "test_so25";
         ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
+        ScanMasterClock "wb_clk_i";
     }
     ScanChain "26" {
-        ScanLength 25;
+        ScanLength 48;
         ScanIn "test_si26";
         ScanOut "test_so26";
         ScanEnable "test_se";
         ScanMasterClock "sdram_clk";
-    }
-    ScanChain "27" {
-        ScanLength 24;
-        ScanIn "test_si27";
-        ScanOut "test_so27";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "28" {
-        ScanLength 25;
-        ScanIn "test_si28";
-        ScanOut "test_so28";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "29" {
-        ScanLength 24;
-        ScanIn "test_si29";
-        ScanOut "test_so29";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "30" {
-        ScanLength 25;
-        ScanIn "test_si30";
-        ScanOut "test_so30";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "31" {
-        ScanLength 25;
-        ScanIn "test_si31";
-        ScanOut "test_so31";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "32" {
-        ScanLength 24;
-        ScanIn "test_si32";
-        ScanOut "test_so32";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "33" {
-        ScanLength 24;
-        ScanIn "test_si33";
-        ScanOut "test_so33";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "34" {
-        ScanLength 24;
-        ScanIn "test_si34";
-        ScanOut "test_so34";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "35" {
-        ScanLength 24;
-        ScanIn "test_si35";
-        ScanOut "sdr_addr[11]";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "36" {
-        ScanLength 24;
-        ScanIn "test_si36";
-        ScanOut "sdr_cs_n";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "37" {
-        ScanLength 24;
-        ScanIn "test_si37";
-        ScanOut "test_so37";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "38" {
-        ScanLength 24;
-        ScanIn "test_si38";
-        ScanOut "sdr_we_n";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "39" {
-        ScanLength 24;
-        ScanIn "test_si39";
-        ScanOut "test_so39";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "40" {
-        ScanLength 23;
-        ScanIn "test_si40";
-        ScanOut "test_so40";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "41" {
-        ScanLength 24;
-        ScanIn "test_si41";
-        ScanOut "test_so41";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "42" {
-        ScanLength 23;
-        ScanIn "test_si42";
-        ScanOut "test_so42";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "43" {
-        ScanLength 24;
-        ScanIn "test_si43";
-        ScanOut "test_so43";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "44" {
-        ScanLength 24;
-        ScanIn "test_si44";
-        ScanOut "test_so44";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "45" {
-        ScanLength 23;
-        ScanIn "test_si45";
-        ScanOut "test_so45";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "46" {
-        ScanLength 24;
-        ScanIn "test_si46";
-        ScanOut "test_so46";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "47" {
-        ScanLength 23;
-        ScanIn "test_si47";
-        ScanOut "test_so47";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
-    }
-    ScanChain "48" {
-        ScanLength 24;
-        ScanIn "test_si48";
-        ScanOut "test_so48";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "49" {
-        ScanLength 24;
-        ScanIn "test_si49";
-        ScanOut "test_so49";
-        ScanEnable "test_se";
-        ScanMasterClock "sdram_clk";
-    }
-    ScanChain "50" {
-        ScanLength 23;
-        ScanIn "test_si50";
-        ScanOut "test_so50";
-        ScanEnable "test_se";
-        ScanMasterClock "wb_clk_i";
     }
 }
 Timing {
@@ -899,20 +658,6 @@ Timing {
                     '5ns' D;
                 }
             }
-            "sdram_resetn" {
-                P {
-                    '0ns' D;
-                    '4ns' U;
-                    '5ns' D;
-                }
-            }
-            "wb_rst_i" {
-                P {
-                    '0ns' D;
-                    '4ns' U;
-                    '5ns' D;
-                }
-            }
             "all_bidirectionals" {
                 0 {
                     '0ns' D;
@@ -955,6 +700,13 @@ Timing {
                 L {
                     '0ns' Z;
                     '2ns' L;
+                }
+            }
+            "data_source" {
+                P {
+                    '0ns' D;
+                    '4ns' U;
+                    '5ns' D;
                 }
             }
         }
@@ -1064,14 +816,7 @@ Timing {
                     '5ns' D;
                 }
             }
-            "wb_rst_i" {
-                P {
-                    '0ns' D;
-                    '4ns' U;
-                    '5ns' D;
-                }
-            }
-            "sdram_resetn" {
+            "data_source" {
                 P {
                     '0ns' D;
                     '4ns' U;
@@ -1185,14 +930,7 @@ Timing {
                     '5ns' D;
                 }
             }
-            "wb_rst_i" {
-                P {
-                    '0ns' D;
-                    '4ns' U;
-                    '5ns' D;
-                }
-            }
-            "sdram_resetn" {
+            "data_source" {
                 P {
                     '0ns' D;
                     '4ns' U;
@@ -1306,14 +1044,7 @@ Timing {
                     '5ns' D;
                 }
             }
-            "wb_rst_i" {
-                P {
-                    '0ns' D;
-                    '4ns' U;
-                    '5ns' D;
-                }
-            }
-            "sdram_resetn" {
+            "data_source" {
                 P {
                     '0ns' D;
                     '4ns' U;
@@ -1427,14 +1158,7 @@ Timing {
                     '5ns' D;
                 }
             }
-            "wb_rst_i" {
-                P {
-                    '0ns' D;
-                    '4ns' U;
-                    '5ns' D;
-                }
-            }
-            "sdram_resetn" {
+            "data_source" {
                 P {
                     '0ns' D;
                     '4ns' U;
@@ -1448,56 +1172,68 @@ Procedures {
     "multiclock_capture" {
         W "_multiclock_capture_WFT_";
         C {
-            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
-            "all_outputs" = \r103 X;
+            "all_inputs" = \r58 N 0 \r27 N 0 \r43 N 01 \r27 N;
+            "all_outputs" = \r80 X;
             "all_bidirectionals" = \r16 Z;
         }
+        F {
+            "test_mode" = 1;
+        }
         V {
-            "_pi" = \r197 #;
-            "_po" = \r119 #;
+            "_pi" = \r175 #;
+            "_po" = \r96 #;
         }
     }
     "allclock_capture" {
         W "_allclock_capture_WFT_";
         C {
-            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
-            "all_outputs" = \r103 X;
+            "all_inputs" = \r58 N 0 \r27 N 0 \r43 N 01 \r27 N;
+            "all_outputs" = \r80 X;
             "all_bidirectionals" = \r16 Z;
         }
+        F {
+            "test_mode" = 1;
+        }
         V {
-            "_pi" = \r197 #;
-            "_po" = \r119 #;
+            "_pi" = \r175 #;
+            "_po" = \r96 #;
         }
     }
     "allclock_launch" {
         W "_allclock_launch_WFT_";
         C {
-            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
-            "all_outputs" = \r103 X;
+            "all_inputs" = \r58 N 0 \r27 N 0 \r43 N 01 \r27 N;
+            "all_outputs" = \r80 X;
             "all_bidirectionals" = \r16 Z;
         }
+        F {
+            "test_mode" = 1;
+        }
         V {
-            "_pi" = \r197 #;
-            "_po" = \r119 #;
+            "_pi" = \r175 #;
+            "_po" = \r96 #;
         }
     }
     "allclock_launch_capture" {
         W "_allclock_launch_capture_WFT_";
         C {
-            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
-            "all_outputs" = \r103 X;
+            "all_inputs" = \r58 N 0 \r27 N 0 \r43 N 01 \r27 N;
+            "all_outputs" = \r80 X;
             "all_bidirectionals" = \r16 Z;
         }
+        F {
+            "test_mode" = 1;
+        }
         V {
-            "_pi" = \r197 #;
-            "_po" = \r119 #;
+            "_pi" = \r175 #;
+            "_po" = \r96 #;
         }
     }
     "load_unload" {
         W "_default_WFT_";
         C {
-            "all_inputs" = \r58 N 00 \r26 N 0 \r36 N 0 \r57 N;
-            "all_outputs" = \r103 X;
+            "all_inputs" = \r58 N 0 \r27 N 0 \r43 N 01 \r27 N;
+            "all_outputs" = \r80 X;
             "all_bidirectionals" = \r16 Z;
         }
         "Internal_scan_pre_shift" : V {
@@ -1505,9 +1241,9 @@ Procedures {
         }
         Shift {
             V {
-                "_clk" = P0P0;
-                "_si" = \r50 #;
-                "_so" = \r50 #;
+                "_clk" = PP;
+                "_si" = \r26 #;
+                "_so" = \r26 #;
             }
         }
     }
@@ -1516,15 +1252,15 @@ MacroDefs {
     "test_setup" {
         W "_default_WFT_";
         C {
-            "all_inputs" = \r181 N;
-            "all_outputs" = \r103 X;
+            "all_inputs" = \r159 N;
+            "all_outputs" = \r80 X;
             "all_bidirectionals" = \r16 Z;
         }
         V {
             "sdram_clk" = 0;
-            "sdram_resetn" = 0;
             "wb_clk_i" = 0;
-            "wb_rst_i" = 0;
+            "data_source" = 0;
+            "test_mode" = 1;
         }
         V {
         }

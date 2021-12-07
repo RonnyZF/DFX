@@ -1,4 +1,5 @@
-src_jtag/tap.v
-src_jtag/tdi_tdo_generator.v
-src_jtag/asic.v
-src_jtag/duv_with_tap.v
+/home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_top_struct.v
+/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/tap.v
+/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/tdi_tdo_generator.v
+/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/wrapper.v
+/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v
