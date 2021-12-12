@@ -1,10 +1,10 @@
 module TDI_Generator (to_TDI, scan_pattern,  load, enable_bypass_pattern, TCK);
-  parameter 			BSC_Reg_size = 14;
+  parameter 			BSC_Reg_size = 253;
   output				to_TDI;
   input 	[BSC_Reg_size -1: 0]	scan_pattern;
   input				load, enable_bypass_pattern, TCK;
   reg	[BSC_Reg_size -1: 0]	TDI_Reg;
-  wire				enableTDO = t_ASIC_with_TAP.M0.enableTDO;
+  wire				enableTDO = testbench_tap.M0.enableTDO;
   assign to_TDI = TDI_Reg [0];
 
   always @ (posedge TCK) if (load) TDI_Reg <= scan_pattern;
@@ -14,14 +14,14 @@ module TDI_Generator (to_TDI, scan_pattern,  load, enable_bypass_pattern, TCK);
 endmodule
 
 module TDO_Monitor (to_TDI, from_TDO, strobe, TCK);
-  parameter 			BSC_Reg_size = 14;
+  parameter 			BSC_Reg_size = 253;
   output				to_TDI;
   input				from_TDO, strobe, TCK;
   reg	[BSC_Reg_size -1: 0]	TDI_Reg, Pattern_Buffer_1, Pattern_Buffer_2, 
 				Captured_Pattern, TDO_Reg;
   reg 				Error;
   parameter			test_width = 5;
-  wire enableTDO = t_ASIC_with_TAP.M0.enableTDO;
+  wire enableTDO = testbench_tap.M0.enableTDO;
   wire	[test_width -1: 0]		Expected_out = 
 Pattern_Buffer_2 [BSC_Reg_size -1: BSC_Reg_size - test_width];
 

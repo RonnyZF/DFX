@@ -3,7 +3,7 @@
 // Version   : R-2020.09-SP5-1
 // Date      : Sat Nov 27 18:40:02 2021
 /////////////////////////////////////////////////////////////
-`timescale 1ns/1ps
+//`timescale 1ns/1ps
 
 module sdrc_top ( cfg_sdr_width, cfg_colbits, Port3, wb_clk_i, wb_stb_i, 
         wb_ack_o, wb_addr_i, wb_we_i, wb_dat_i, wb_sel_i, wb_dat_o, wb_cyc_i, 
@@ -87,8 +87,9 @@ module sdrc_top ( cfg_sdr_width, cfg_colbits, Port3, wb_clk_i, wb_stb_i,
   sdrc_core_SDR_DW16_SDR_BW2_test_1 u_sdrc_core ( .clk(sdram_clk), .pad_clk(
         sdram_clk), .reset_n(resetn), .sdr_width(cfg_sdr_width), .cfg_colbits(
         cfg_colbits), .app_req(app_req), .app_req_addr(app_req_addr), 
-        .app_req_len(app_req_len), .app_req_wrap(1'b0), .app_req_wr_n(
-        app_req_wr_n), .app_req_ack(app_req_ack), .cfg_req_depth(cfg_req_depth), .app_wr_data(app_wr_data), .app_wr_en_n(app_wr_en_n), .app_rd_data(
+        .app_req_len(app_req_len), .app_req_wrap(1'b0), .app_req_wr_n(app_req_wr_n),
+	.app_req_ack(app_req_ack), .cfg_req_depth(cfg_req_depth), 
+	.app_wr_data(app_wr_data), .app_wr_en_n(app_wr_en_n), .app_rd_data(
         app_rd_data), .app_rd_valid(app_rd_valid), .app_last_rd(app_last_rd), 
         .app_wr_next_req(app_wr_next_req), .sdr_init_done(sdr_init_done), 
         .app_req_dma_last(app_req), .sdr_cs_n(sdr_cs_n), .sdr_cke(sdr_cke), 

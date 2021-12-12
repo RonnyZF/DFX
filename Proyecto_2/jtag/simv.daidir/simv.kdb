@@ -1,0 +1,22 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag
+VCS_HOME=/home/gcastrolocal/tools/vcs/R-2020.12-SP2
+VERDI_HOME=/home/gcastrolocal/tools/verdi/R-2020.12-SP2
+SystemC=FALSE
+UUM=FALSE
+KDB=TRUE
+USE_NOVAS_HOME=FALSE
+COSIM=FALSE
+TOP=AN2I OR2I IVI IVA IVAP IVDA IVDAP B5I B5IP B4I B4IP ND2I ND2P NR2I NR2P ENI EOI ND3P NR3P ND4P ND5 AO6P AO7P AO2P AO4P AN3P AN4P OR2P OR3P OR4P NR5 ND6 NR6 ND8 NR8 ND5P NR5P ND6P NR6P ND8P NR8P NR16 NR16P ENP EOP EO1P EON1P AO1P AO3P MUX21HP MUX21LP MUX31LP MUX21LA AO5P EN3 EN3P EO3 MUX21LAP NR4P FD1 FD2 FD4 B2I B2IP B3I B3IP BTS5 LD1 IBUF1 IBUF2 IBUF3 IBUF4 IBUF5 OBUF1 OBUF2 BIDI BSC_Cell IR_Cell TAP_FSM testbench_tap 
+OPTION=-ssv -ssy 
+ELAB_OPTION=-ssv -ssy 
+ELAB=TRUE
+SIMV_WRAPPER=FALSE
+[vcs]
+RUN_ELABCOM=unset TURBO_LOG_DIR ;\rm -rf simv.daidir/elabcomLog ;/home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/bin/elabcom -logdir simv.daidir/elabcomLog  -simvdaidir simv.daidir  -lib simv.daidir/work  -saveLevel  -elab simv.daidir/kdb -simflow -simdir simv.daidir/kdb_libs -topfile simv.daidir/.elabcomTopFile -pkgfile simv.daidir/.elabcomPkgFile -ssv -ssy  -Lf work +disable_message+C00380+C00381 +disable_message+C00388+C00389  >& /dev/null  && echo Success >& simv.daidir/.elabcomReport || echo Fail >& simv.daidir/.elabcomReport; \rm -rf simv.daidir/work.lib++ simv.daidir/kdb_libs/ 
+
+[Value]
+WREALX=ffff534e50535f58
+WREALZ=ffff534e50535f5a

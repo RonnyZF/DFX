@@ -2,7 +2,7 @@ module async_fifo_36_4_0_0_test_1 ( wr_clk, wr_reset_n, wr_en, wr_data, full,
         afull, rd_clk, rd_reset_n, rd_en, empty, aempty, rd_data, test_si6, 
         test_si5, test_si4, test_si3, test_si2, test_si1, test_so5, test_so4, 
         test_so3, test_so2, test_so1, test_se );
-  input [35:0] wr_data
+  input [35:0] wr_data;
   output [35:0] rd_data;
   input wr_clk, wr_reset_n, wr_en, rd_clk, rd_reset_n, rd_en, test_si6,
          test_si5, test_si4, test_si3, test_si2, test_si1, test_se;

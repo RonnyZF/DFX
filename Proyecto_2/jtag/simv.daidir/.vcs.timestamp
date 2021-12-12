@@ -1,0 +1,123 @@
+0 
+37
++itf+/home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/vcsdp_lite.tab
++lint=TFIPC-L
++vcsd1
++vpi
++warn=all
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/home/gcastrolocal/tools/vcs/R-2020.12-SP2/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libvirsim.so /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/liberrorinf.so /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libsnpsmalloc.so /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/home/gcastrolocal/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/pli.a -ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/home/gcastrolocal/tools/vcs/R-2020.12-SP2/include
+-Mxllcflags=
+-P
+-Xufe=2steps
+-debug_access+all
+-f filelist
+-fsdb
+-full64
+-gen_obj
+-gui
+-kdb
+-picarchive
+-sverilog
+-ucli
+/home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/bin/vcs1
+/home/gcastrolocal/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/verdi.tab
+filelist
+48
+XMODIFIERS=@im=ibus
+XDG_SESSION_TYPE=x11
+XDG_SESSION_ID=3
+XDG_SESSION_DESKTOP=gnome
+XDG_SESSION_CLASS=user
+XDG_RUNTIME_DIR=/run/user/1002
+XDG_MENU_PREFIX=gnome-
+XDG_DESKTOP_NAMES=GNOME
+XDG_DATA_DIRS=/home/rzaratelocal/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+XDG_CURRENT_DESKTOP=GNOME
+XAUTHORITY=/home/rzaratelocal/.Xauthority
+VTE_VERSION=5204
+VMR_MODE_FLAG=64
+VERDI_HOME=/home/gcastrolocal/tools/verdi/R-2020.12-SP2
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_HOME=/home/gcastrolocal/tools/vcs/R-2020.12-SP2
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+USERNAME=rzaratelocal
+UNAME=/bin/uname
+TOOL_HOME=/home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64
+SYNOPSYS=/home/gcastrolocal/tools/icc/R-2020.09-SP5-1
+SSH_AUTH_SOCK=/run/user/1002/keyring/ssh
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2188,unix/unix:/tmp/.ICE-unix/2188
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_IM_MODULE=ibus
+OVA_UUM=0
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+JOURNAL_STREAM=9:20094
+INVOCATION_ID=fab855a2b0e74ba7ac4fa73f9f30ec1a
+HISTCONTROL=ignoredups
+GNOME_TERMINAL_SERVICE=:1.380
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/fc244c17_c9a9_44f0_a469_6e3049dacff4
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+GJS_DEBUG_OUTPUT=stderr
+GDMSESSION=gnome
+DESKTOP_SESSION=gnome
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1002/bus
+COLORTERM=truecolor
+0
+26
+1639344711 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v
+1639331719 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/wrapper.v
+1639175377 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/tdi_tdo_generator.v
+1639332586 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/tap.v
+1638913459 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_top_struct.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/wb2sdrc_dw32_tw8_bl9_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_xfr_ctl_SDR_DW16_SDR_BW2_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_xfr_ctl_SDR_DW16_SDR_BW2_DW01_inc_1_DW01_inc_11.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_xfr_ctl_SDR_DW16_SDR_BW2_DW01_inc_0_DW01_inc_10.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_req_gen_SDR_DW16_SDR_BW2_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_req_gen_SDR_DW16_SDR_BW2_DW01_sub_0_DW01_sub_12.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_req_gen_SDR_DW16_SDR_BW2_DW01_add_0.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_core_SDR_DW16_SDR_BW2_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_bs_convert_SDR_DW16_SDR_BW2_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_bank_fsm_test_3.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_bank_fsm_test_2.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_bank_fsm_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_bank_fsm_test_0.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_bank_ctl_SDR_DW16_SDR_BW2_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/async_fifo_36_8_0_1_test_1.v
+1638913855 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/async_fifo_36_4_0_0_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/async_fifo_33_4_0_1_test_1.v
+1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/class.v
+1638914147 filelist
+1621785728 /home/gcastrolocal/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/verdi.tab
+1622257851 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/vcsdp_lite.tab
+4
+1622259091 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libvirsim.so
+1622258561 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/liberrorinf.so
+1622258323 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libsnpsmalloc.so
+1622258557 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libvfs.so
+1639344725 simv.daidir
+-1 partitionlib
