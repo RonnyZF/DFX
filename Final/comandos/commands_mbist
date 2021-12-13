@@ -1,0 +1,14 @@
+##Correr desde la carpeta src_scan
+
+set target_library lsi_10k.db
+set link_library [list * lsi_10k.db]
+set test_default_period 10
+set test_default_bidir_delay 0
+set test_default_delay 0
+set test_default_scan_style "multiplexed_flip_flop"
+set test_default_strobe 2
+analyze -format verilog -lib WORk {../src/mbist.v}
+elaborate sdrc_top -lib WORK -update
+link
+uniquify
+compile

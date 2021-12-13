@@ -1,0 +1,33 @@
+##Correr desde la carpeta src_scan
+
+set target_library lsi_10k.db
+set link_library [list * lsi_10k.db]
+set test_default_period 10
+set test_default_bidir_delay 0
+set test_default_delay 0
+set test_default_scan_style "multiplexed_flip_flop"
+set test_default_strobe 2
+analyze -format verilog -lib WORk {../src/async_fifo.v ../src/sdrc_bank_ctl.v ../src/sdrc_bank_fsm.v ../src/sdrc_bs_convert.v ../src/sdrc_core.v ../src/sdrc_define.v ../src/sdrc_req_gen.v ../src/sdrc_top.v ../src/sdrc_xfr_ctl.v ../src/sync_fifo.v ../src/wb2sdrc.v}
+elaborate sdrc_top -lib WORK -update
+link
+uniquify
+compile -scan
+set_dft_signal -view existing_dft -type ScanClock -port sdram_clk -timing {4.0 5.0}
+set_dft_signal -view existing_dft -type ScanClock -port wb_clk_i -timing {4.0 5.0}
+set_dft_signal -view existing_dft -type Reset -active 0 -port resetn
+set_dft_signal -type TestData -port sdram_clk
+set_dft_signal -type TestData -port wb_clk_i
+set_dft_signal -type TestData -port resetn
+set_dft_configuration -fix_reset enable
+create_test_protocol -infer_clock -capture_procedure multi_clock
+dft_drc
+set_scan_configuration -max_length 50
+preview_dft
+insert_dft
+dft_drc
+change_names -rules verilog -verbose -hierarchy
+sh mkdir src_scan
+write -format verilog -hierarchy -out ./src_scan/sdrc_top_struct.v
+set test_stil_netlist_format verilog
+sh mkdir reports
+write_test_protocol -output reports/protocol.spf
