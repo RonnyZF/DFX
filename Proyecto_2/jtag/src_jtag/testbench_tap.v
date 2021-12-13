@@ -97,34 +97,34 @@ module testbench_tap ();				// Testbench
 	wire 		test_so24;
 	wire 		test_so25;
 	wire 		test_so26;
-/*
-	wire 	[1:0] 	cfg_sdr_width_fr_ASIC 	= M0.BSC_Interface [252:251];
-	wire 	[1:0] 	cfg_colbits_fr_ASIC 	= M0.BSC_Interface [250:249];
-	wire 	[25:0] 	wb_addr_i_fr_ASIC 	= M0.BSC_Interface [248:223];
-	wire 	[31:0] 	wb_dat_i_fr_ASIC 	= M0.BSC_Interface [222:191];
-	wire 	[3:0] 	wb_sel_i_fr_ASIC 	= M0.BSC_Interface [190:187];
-	wire 	[31:0] 	wb_dat_o_fr_ASIC 	= M0.BSC_Interface [186:155];
-	wire 	[2:0] 	wb_cti_i_fr_ASIC 	= M0.BSC_Interface [154:152];
-	wire 	[1:0] 	sdr_dqm_fr_ASIC 	= M0.BSC_Interface [151:150];
-	wire 	[1:0] 	sdr_ba_fr_ASIC 		= M0.BSC_Interface [149:148];
-	wire 	[12:0] 	sdr_addr_fr_ASIC 	= M0.BSC_Interface [147:135];
-	wire 	[15:0] 	sdr_dq_fr_ASIC 		= M0.BSC_Interface [134:119];
-	wire 	[1:0] 	cfg_req_depth_fr_ASIC 	= M0.BSC_Interface [118:117];
-	wire 	[12:0] 	cfg_sdr_mode_wire_fr_ASIC = M0.BSC_Interface [116:104];
-	wire 	[3:0] 	cfg_sdr_tras_d_fr_ASIC 	= M0.BSC_Interface [103:100];
-	wire 	[3:0] 	cfg_sdr_trp_d_fr_ASIC 	= M0.BSC_Interface [99:96];
-	wire 	[3:0] 	cfg_sdr_trcd_d_fr_ASIC 	= M0.BSC_Interface [95:92];
-	wire 	[2:0] 	cfg_sdr_cas_fr_ASIC 	= M0.BSC_Interface [91:89];
-	wire 	[3:0] 	cfg_sdr_trcar_d_fr_ASIC = M0.BSC_Interface [88:85];
-	wire 	[3:0] 	cfg_sdr_twr_d_fr_ASIC 	= M0.BSC_Interface [84:81];
-	wire 	[11:0] 	cfg_sdr_rfsh_fr_ASIC 	= M0.BSC_Interface [80:69];
-	wire 	[2:0] 	cfg_sdr_rfmax_fr_ASIC 	= M0.BSC_Interface [68:66];
-	wire 		Port3_fr_ASIC 		= M0.BSC_Interface [65];;
-	wire 		wb_clk_i_fr_ASIC 	= M0.BSC_Interface [64];
-	wire 		wb_stb_i_fr_ASIC 	= M0.BSC_Interface [63];
-	wire 		wb_we_i_fr_ASIC 	= M0.BSC_Interface [62];
-	wire 		wb_cyc_i_fr_ASIC 	= M0.BSC_Interface [61];
-	wire 		sdram_clk_fr_ASIC 	= M0.BSC_Interface [60];
+
+	wire 	[1:0] 	cfg_sdr_width_fr_ASIC 	= M0.BSC_Interface [250:249];
+	wire 	[1:0] 	cfg_colbits_fr_ASIC 	= M0.BSC_Interface [248:247];
+	wire 	[25:0] 	wb_addr_i_fr_ASIC 	= M0.BSC_Interface [246:221];
+	wire 	[31:0] 	wb_dat_i_fr_ASIC 	= M0.BSC_Interface [220:189];
+	wire 	[3:0] 	wb_sel_i_fr_ASIC 	= M0.BSC_Interface [188:185];
+	wire 	[31:0] 	wb_dat_o_fr_ASIC 	= M0.BSC_Interface [184:153];
+	wire 	[2:0] 	wb_cti_i_fr_ASIC 	= M0.BSC_Interface [152:150];
+	wire 	[1:0] 	sdr_dqm_fr_ASIC 	= M0.BSC_Interface [149:148];
+	wire 	[1:0] 	sdr_ba_fr_ASIC 		= M0.BSC_Interface [147:146];
+	wire 	[12:0] 	sdr_addr_fr_ASIC 	= M0.BSC_Interface [145:133];
+	wire 	[15:0] 	sdr_dq_fr_ASIC 		= M0.BSC_Interface [132:117];
+	wire 	[1:0] 	cfg_req_depth_fr_ASIC 	= M0.BSC_Interface [116:115];
+	wire 	[12:0] 	cfg_sdr_mode_wire_fr_ASIC = M0.BSC_Interface [114:102];
+	wire 	[3:0] 	cfg_sdr_tras_d_fr_ASIC 	= M0.BSC_Interface [101:98];
+	wire 	[3:0] 	cfg_sdr_trp_d_fr_ASIC 	= M0.BSC_Interface [97:94];
+	wire 	[3:0] 	cfg_sdr_trcd_d_fr_ASIC 	= M0.BSC_Interface [93:90];
+	wire 	[2:0] 	cfg_sdr_cas_fr_ASIC 	= M0.BSC_Interface [89:87];
+	wire 	[3:0] 	cfg_sdr_trcar_d_fr_ASIC = M0.BSC_Interface [85:83];
+	wire 	[3:0] 	cfg_sdr_twr_d_fr_ASIC 	= M0.BSC_Interface [82:79];
+	wire 	[11:0] 	cfg_sdr_rfsh_fr_ASIC 	= M0.BSC_Interface [78:67];
+	wire 	[2:0] 	cfg_sdr_rfmax_fr_ASIC 	= M0.BSC_Interface [66:64];
+	wire 		Port3_fr_ASIC 		= M0.BSC_Interface [63];;
+//	wire 		wb_clk_i_fr_ASIC 	= M0.BSC_Interface [64];
+	wire 		wb_stb_i_fr_ASIC 	= M0.BSC_Interface [62];
+	wire 		wb_we_i_fr_ASIC 	= M0.BSC_Interface [61];
+	wire 		wb_cyc_i_fr_ASIC 	= M0.BSC_Interface [60];
+//	wire 		sdram_clk_fr_ASIC 	= M0.BSC_Interface [60];
 	wire 		resetn_fr_ASIC 		= M0.BSC_Interface [59];
 	wire 		cfg_sdr_en_fr_ASIC 	= M0.BSC_Interface [58];
 	wire 		test_si1_fr_ASIC 	= M0.BSC_Interface [57];
@@ -186,7 +186,7 @@ module testbench_tap ();				// Testbench
 	wire 		test_so24_fr_ASIC 	= M0.BSC_Interface [2];
 	wire 		test_so25_fr_ASIC 	= M0.BSC_Interface [1];
 	wire 		test_so26_fr_ASIC 	= M0.BSC_Interface [0];
-*/
+
 	reg 	TMS, TCK;
 	wire 	TDI;
 	wire 	TDO;
@@ -196,8 +196,27 @@ module testbench_tap ();				// Testbench
 	reg	[BSC_Reg_size -1: 0] 	Array_of_ASIC_Test_Patterns [0: N_ASIC_Patterns -1];
 	reg	[IR_Reg_size -1: 0] 	Array_of_TAP_Instructions [0: N_TAP_Instructions -1];
 	reg	[BSC_Reg_size -1: 0]	Pattern_Register;		// Size to maximum TDR
+//	reg	[BSC_Reg_size -1: 0]	TEST_Register;
 	reg	enable_bypass_pattern;
 
+
+/*
+	wrapper M0 (
+		cfg_sdr_width, cfg_colbits, wb_addr_i, wb_dat_i, wb_sel_i, 
+		wb_dat_o, wb_cti_i, sdr_dqm, sdr_ba, sdr_addr, sdr_dq, 
+		cfg_req_depth, cfg_sdr_mode_reg, cfg_sdr_tras_d, cfg_sdr_trp_d, 
+		cfg_sdr_trcd_d, cfg_sdr_cas, cfg_sdr_trcar_d, cfg_sdr_twr_d, cfg_sdr_rfsh,
+		cfg_sdr_rfmax, Port3, wb_clk_i, wb_stb_i, wb_we_i, wb_cyc_i, sdram_clk, 
+		resetn, cfg_sdr_en, test_si1, test_si2, test_si3, test_si4, test_si5, 
+		test_si6, test_si7, test_si8, test_si9, test_si10, test_si11, test_si12, 
+		test_si13, test_si14, test_si15, test_si16, test_si17, test_si18, test_si19,
+		test_si20, test_si21, test_si22, test_si23, test_si24, test_si25, test_si26, 
+		test_se, wb_ack_o, sdr_cs_n, sdr_cke, sdr_ras_n, sdr_cas_n, sdr_we_n, 
+		sdr_init_done, test_so1, test_so2, test_so3, test_so4, test_so5, test_so6, 
+		test_so7, test_so8, test_so9, test_so10, test_so11, test_so12, test_so13, 
+		test_so14, test_so15, test_so16, test_so17, test_so20, test_so21, test_so22,
+		test_so23, test_so24, test_so25, test_so26, TDO, TDI, TMS, TCK);
+*/
 	wrapper M0 (
 		.cfg_sdr_width(cfg_sdr_width), 
 		.cfg_colbits(cfg_colbits), 
@@ -291,7 +310,6 @@ module testbench_tap ();				// Testbench
 		.TMS(TMS), 
 		.TCK(TCK)
 	);
-	  
 
 	TDI_Generator M1(
 	    .to_TDI (TDI),
@@ -311,6 +329,8 @@ module testbench_tap ();				// Testbench
 //  initial #End_of_Test $finish;
 
 initial begin TCK = 0; forever #5 TCK = ~TCK; end	 
+initial begin wb_clk_i = 0; forever #5 wb_clk_i = TCK; end	 
+initial begin sdram_clk = 0; forever #5 sdram_clk = TCK; end	 
  
   /*  Summary of  a basic test plan for ASIC_with TAP
   Verify default to bypass instruction
@@ -326,20 +346,202 @@ initial begin TCK = 0; forever #5 TCK = ~TCK; end
 // External I/O for normal operation
 
 initial fork
-   // {a, b, c_in} = 9'b0;  input 	[1:0] 		cfg_sdr_width;  				//  ASIC interface I/O
-//2+26+32+4+32+3+2+2+13+16+2+13+4+4+4+3+4+4+12+3+
-	{cfg_colbits,wb_addr_i,wb_dat_i,wb_sel_i,wb_cti_i,
+
+	{cfg_sdr_width,cfg_colbits,wb_addr_i,wb_dat_i,wb_sel_i,wb_cti_i,
 	cfg_req_depth,cfg_sdr_mode_reg,
 	cfg_sdr_tras_d,cfg_sdr_trp_d,cfg_sdr_trcd_d,cfg_sdr_cas,
 	cfg_sdr_trcar_d,cfg_sdr_twr_d,cfg_sdr_rfsh,cfg_sdr_rfmax,
-	Port3, wb_clk_i, wb_stb_i, wb_we_i, wb_cyc_i, sdram_clk, resetn,
+	Port3, wb_stb_i, wb_we_i, wb_cyc_i, resetn,
 	cfg_sdr_en, test_si1, test_si2, test_si3, test_si4, test_si5,
 	test_si6, test_si7, test_si8, test_si9, test_si10, test_si11,
 	test_si12, test_si13, test_si14, test_si15, test_si16, test_si17,
 	test_si18, test_si19, test_si20, test_si21, test_si22, test_si23,
-	test_si24, test_si25, test_si26, test_se} = 220'b0;
+	test_si24, test_si25, test_si26, test_se} = 251'b0;
 
-//  {a, b, c_in} = 9'b_0010_0100_0;  // sum = F, c_out = 0, a = A, b = 5, c_in = 0 
+	cfg_colbits = 3'b11;
+
+
+/*{	
+	2'b0, //[1:0] 	cfg_sdr_width;
+	2'b11, //[1:0] 	cfg_colbits;
+	26'b0, //[25:0] 	wb_addr_i;
+	32'b0, //[31:0] 	wb_dat_i;
+	4'b0, //[3:0] 	wb_sel_i;
+	32'b0, //[31:0] 	wb_dat_o;
+	3'b0, //[2:0] 	wb_cti_i;******************************
+	2'b0, //[1:0] 	sdr_dqm;
+	2'b0, //[1:0] 	sdr_ba;
+	13'b0, //[12:0] 	sdr_addr;
+	16'b0, //[15:0] 	sdr_dq;
+	2'b0, //[1:0] 	cfg_req_depth;
+	13'b0, //[12:0] 	cfg_sdr_mode_reg;
+	4'b0, //[3:0] 	cfg_sdr_tras_d;
+	4'b0, //[3:0] 	cfg_sdr_trp_d;
+	4'b0, //[3:0] 	cfg_sdr_trcd_d;
+	3'b0, //[2:0] 	cfg_sdr_cas;
+	4'b0, //[3:0] 	cfg_sdr_trcar_d;
+	4'b0, //[3:0] 	cfg_sdr_twr_d;
+	12'b0, //[11:0] 	cfg_sdr_rfsh;
+	3'b0, //[2:0] 	cfg_sdr_rfmax;
+	1'b0, //	Port3;
+	1'b1, //	wb_clk_i;
+	1'b0, //	wb_stb_i;
+	1'b0, //	wb_we_i;
+	1'b0, //	wb_cyc_i;
+	1'b0, //	sdram_clk;
+	1'b1, //	resetn;
+	1'b1, //	cfg_sdr_en;
+	1'b0, //	test_si1;
+	1'b1, //	test_si2;
+	1'b0, //	test_si3;
+	1'b0, //	test_si4;
+	1'b0, //	test_si5;
+	1'b0, //	test_si6;
+	1'b0, //	test_si7;
+	1'b0, //	test_si8;
+	1'b0, //	test_si9;
+	1'b0, //	test_si10;
+	1'b0, //	test_si11;
+	1'b0, //	test_si12;
+	1'b0, //	test_si13;
+	1'b0, //	test_si14;
+	1'b0, //	test_si15;
+	1'b0, //	test_si16;
+	1'b0, //	test_si17;
+	1'b0, //	test_si18;
+	1'b0, //	test_si19;
+	1'b0, //	test_si20;
+	1'b0, //	test_si21;
+	1'b0, //	test_si22;
+	1'b0, //	test_si23;
+	1'b0, //	test_si24;
+	1'b0, //	test_si25;
+	1'b0, //	test_si26;
+	1'b0, //	test_se;
+
+	1'b0, //	wb_ack_o;
+	1'b0, //	sdr_cs_n;
+	1'b0, //	sdr_cke;
+	1'b0, //	sdr_ras_n;
+	1'b0, //	sdr_cas_n;
+	1'b0, //	sdr_we_n;
+	1'b0, //	sdr_init_done;
+	1'b0, //	test_so1;
+	1'b0, //	test_so2;
+	1'b0, //	test_so3;
+	1'b0, //	test_so4;
+	1'b0, //	test_so5;
+	1'b0, //	test_so6;
+	1'b0, //	test_so7;
+	1'b0, //	test_so8;
+	1'b0, //	test_so9;
+	1'b0, //	test_so10;
+	1'b0, //	test_so11;
+	1'b0, //	test_so12;
+	1'b0, //	test_so13;
+	1'b0, //	test_so14;
+	1'b0, //	test_so15;
+	1'b0, //	test_so16;
+	1'b0, //	test_so17;
+	1'b0, //	test_so20;
+	1'b0, //	test_so21;
+	1'b0, //	test_so22;
+	1'b0, //	test_so23;
+	1'b0, //	test_so24;
+	1'b0, //	test_so25;
+	1'b0}; //	test_so26;
+
+	TEST_Register = {	
+	2'b0, //[1:0] 	cfg_sdr_width;
+	2'b11, //[1:0] 	cfg_colbits;
+	26'b0, //[25:0] 	wb_addr_i;
+	32'b0, //[31:0] 	wb_dat_i;
+	4'b0, //[3:0] 	wb_sel_i;
+	32'b0, //[31:0] 	wb_dat_o;
+	3'b0, //[2:0] 	wb_cti_i;******************************
+	2'b0, //[1:0] 	sdr_dqm;
+	2'b0, //[1:0] 	sdr_ba;
+	13'b0, //[12:0] 	sdr_addr;
+	16'b0, //[15:0] 	sdr_dq;
+	2'b0, //[1:0] 	cfg_req_depth;
+	13'b0, //[12:0] 	cfg_sdr_mode_reg;
+	4'b0, //[3:0] 	cfg_sdr_tras_d;
+	4'b0, //[3:0] 	cfg_sdr_trp_d;
+	4'b0, //[3:0] 	cfg_sdr_trcd_d;
+	3'b0, //[2:0] 	cfg_sdr_cas;
+	4'b0, //[3:0] 	cfg_sdr_trcar_d;
+	4'b0, //[3:0] 	cfg_sdr_twr_d;
+	12'b0, //[11:0] 	cfg_sdr_rfsh;
+	3'b0, //[2:0] 	cfg_sdr_rfmax;
+	1'b0, //	Port3;
+	1'b1, //	wb_clk_i;
+	1'b0, //	wb_stb_i;
+	1'b0, //	wb_we_i;
+	1'b0, //	wb_cyc_i;
+	1'b0, //	sdram_clk;
+	1'b1, //	resetn;
+	1'b1, //	cfg_sdr_en;
+	1'b0, //	test_si1;
+	1'b1, //	test_si2;
+	1'b0, //	test_si3;
+	1'b0, //	test_si4;
+	1'b0, //	test_si5;
+	1'b0, //	test_si6;
+	1'b0, //	test_si7;
+	1'b0, //	test_si8;
+	1'b0, //	test_si9;
+	1'b0, //	test_si10;
+	1'b0, //	test_si11;
+	1'b0, //	test_si12;
+	1'b0, //	test_si13;
+	1'b0, //	test_si14;
+	1'b0, //	test_si15;
+	1'b0, //	test_si16;
+	1'b0, //	test_si17;
+	1'b0, //	test_si18;
+	1'b0, //	test_si19;
+	1'b0, //	test_si20;
+	1'b0, //	test_si21;
+	1'b0, //	test_si22;
+	1'b0, //	test_si23;
+	1'b0, //	test_si24;
+	1'b0, //	test_si25;
+	1'b0, //	test_si26;
+	1'b0, //	test_se;
+
+	1'b0, //	wb_ack_o;
+	1'b0, //	sdr_cs_n;
+	1'b0, //	sdr_cke;
+	1'b0, //	sdr_ras_n;
+	1'b0, //	sdr_cas_n;
+	1'b0, //	sdr_we_n;
+	1'b0, //	sdr_init_done;
+	1'b0, //	test_so1;
+	1'b0, //	test_so2;
+	1'b0, //	test_so3;
+	1'b0, //	test_so4;
+	1'b0, //	test_so5;
+	1'b0, //	test_so6;
+	1'b0, //	test_so7;
+	1'b0, //	test_so8;
+	1'b0, //	test_so9;
+	1'b0, //	test_so10;
+	1'b0, //	test_so11;
+	1'b0, //	test_so12;
+	1'b0, //	test_so13;
+	1'b0, //	test_so14;
+	1'b0, //	test_so15;
+	1'b0, //	test_so16;
+	1'b0, //	test_so17;
+	1'b0, //	test_so20;
+	1'b0, //	test_so21;
+	1'b0, //	test_so22;
+	1'b0, //	test_so23;
+	1'b0, //	test_so24;
+	1'b0, //	test_so25;
+	1'b0}; //	test_so26;
+*/
+
 join
 
 /*  Option to force error to test fault detection
@@ -349,6 +551,7 @@ join
 */
 
 initial begin 		// Test sequence: Scan, pause, return to S_Run_Idle
+
 	$display("primer test");
 	$fsdbDumpvars(0);
 	strobe  = 0;
@@ -387,10 +590,11 @@ initial begin 		// Test sequence: Scan, pause, return to S_Run_Idle
     */
      Go_to_S_Update_DR;	
      Go_to_S_Run_Idle;
+
   end
 
 // Test to load instruction register with INTEST instruction
-/*
+
    initial #time_1 begin
 	$display("segundo test");
   $fsdbDumpvars(0);
@@ -429,6 +633,7 @@ initial begin 		// Test sequence: Scan, pause, return to S_Run_Idle
      Go_to_S_Run_Idle;
 
 // Capture data and scan out while scanning in another pattern
+    repeat(48) begin
     pattern_ptr = 2; 
     Load_ASIC_Test_Pattern;	
     Go_to_S_Select_DR;
@@ -441,10 +646,12 @@ initial begin 		// Test sequence: Scan, pause, return to S_Run_Idle
     Go_to_S_Pause_DR;
     Go_to_S_Exit2_DR;
     Go_to_S_Update_DR;
-     strobe = 0;
-     Go_to_S_Run_Idle;
+    strobe = 0;
+    Go_to_S_Run_Idle;
+    end
+	$display("checkpoint");
   end
-*/
+
 /************************************** TAP CONTROLLER TASKS *************************************/
   task  Wait_to_enter_S_Reset;
     begin
@@ -496,9 +703,9 @@ endtask
 task Declare_Array_of_ASIC_Test_Patterns;
   begin
 
-  Array_of_ASIC_Test_Patterns [0] = 253'b0; 
+  Array_of_ASIC_Test_Patterns [0] = 253'b1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010111; 
   Array_of_ASIC_Test_Patterns [1] = 253'b0000_0_0000_0000_0; 
-  Array_of_ASIC_Test_Patterns [2] = 253'b1111_1_1111_1111_1;  
+  Array_of_ASIC_Test_Patterns [2] = 253'b1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010111; 
   Array_of_ASIC_Test_Patterns [3] = 253'b0100_1_0101_0101_0;
 end endtask
 

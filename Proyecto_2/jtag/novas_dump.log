@@ -157,7 +157,7 @@ HISTCONTROL=ignoredups
 DISPLAY=:5
 HOSTNAME=synopsysmae
 VCS_STACK_EXEC=true
-OLDPWD=/home/rzaratelocal/dfx/jtag
+OLDPWD=/home/rzaratelocal/dfx/DFX
 INVOCATION_ID=fab855a2b0e74ba7ac4fa73f9f30ec1a
 COLORTERM=truecolor
 USERNAME=rzaratelocal
@@ -251,8 +251,8 @@ argv[5]=-ucli
 argv[6]=-l
 argv[7]=/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog/sim.log
 252 profile - 100
-          CPU/Mem usage: 0.020 sys,  0.040 user,  295.56M mem
-253 Elapsed time:    0:00:00    Sun Dec 12 15:32:17 2021
+          CPU/Mem usage: 0.010 sys,  0.050 user,  295.57M mem
+253 Elapsed time:    0:00:00    Mon Dec 13 08:05:05 2021
 254 pliAppInit
 255 ndpGetenv(FSDB_FILE): /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/inter.fsdb
 256 ndpGetenv(FSDB_SVA_STATUS): 1
@@ -280,51 +280,103 @@ argv[7]=/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog/sim.log
 278 *Verdi* : Flush all FSDB Files at 0 ps.
 279 DVDI_is_vir_unload_enabled is enable
 280 FSDB_VCS_ENABLE_NATIVE_VC is enable
-281 sps_call_fsdbDumpvars_vd_main at 0 : /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v(353)
+281 sps_call_fsdbDumpvars_vd_main at 20000 : /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v(557)
 282 argv[0]: (0)
 283 *Verdi* : Begin traversing the scopes, layer (0).
 284 *Verdi* : End of traversing.
 285 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.030 sys,  0.250 user,  410.81M mem
-                   incr: 0.010 sys,  0.150 user,  5.15M mem
-                   accu: 0.010 sys,  0.150 user,  5.15M mem
-              accu incr: 0.010 sys,  0.150 user,  5.15M mem
+          CPU/Mem usage: 0.030 sys,  0.260 user,  410.82M mem
+                   incr: 0.010 sys,  0.160 user,  5.15M mem
+                   accu: 0.010 sys,  0.160 user,  5.15M mem
+              accu incr: 0.010 sys,  0.160 user,  5.15M mem
 
-          Count usage: 27614 var,  11488 idcode,  7109 callback
-                 incr: 27614 var,  11488 idcode,  7109 callback
-                 accu: 27614 var,  11488 idcode,  7109 callback
-            accu incr: 27614 var,  11488 idcode,  7109 callback
-286 Elapsed time:    0:00:22    Sun Dec 12 15:32:39 2021
+          Count usage: 27699 var,  11568 idcode,  7186 callback
+                 incr: 27699 var,  11568 idcode,  7186 callback
+                 accu: 27699 var,  11568 idcode,  7186 callback
+            accu incr: 27699 var,  11568 idcode,  7186 callback
+286 Elapsed time:    0:00:05    Mon Dec 13 08:05:10 2021
 287 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.030 sys,  0.250 user,  411.86M mem
-                   incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.010 sys,  0.150 user,  6.20M mem
-              accu incr: 0.000 sys,  0.000 user,  1.05M mem
+          CPU/Mem usage: 0.030 sys,  0.260 user,  412.01M mem
+                   incr: 0.000 sys,  0.000 user,  1.19M mem
+                   accu: 0.010 sys,  0.160 user,  6.34M mem
+              accu incr: 0.000 sys,  0.000 user,  1.19M mem
 
-          Count usage: 27614 var,  11488 idcode,  7109 callback
+          Count usage: 27699 var,  11568 idcode,  7186 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 27614 var,  11488 idcode,  7109 callback
+                 accu: 27699 var,  11568 idcode,  7186 callback
             accu incr: 0 var,  0 idcode,  0 callback
-288 Elapsed time:    0:00:22    Sun Dec 12 15:32:39 2021
-289 sps_tcl_fsdbDumpflush_vd_main at 3292045000 : N/A(0)
-290 *Verdi* : Flush all FSDB Files at 3,292,045,000 ps.
-291 End of simulation at 3292045000
-292 Memory usage: 489.591 M
-293 Elapsed time:    0:02:02    Sun Dec 12 15:34:19 2021
-294 Begin FSDB profile info:
-295 FSDB Writer : bc1(52685334) bcn(1976552) mtf/stf(0/5)
-FSDB Writer elapsed time : flush(0.370257) io wait(0.000000) theadpool wait(0.000000)
+288 Elapsed time:    0:00:05    Mon Dec 13 08:05:10 2021
+289 sps_call_fsdbDumpvars_vd_main at 350000 : /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v(601)
+290 argv[0]: (0)
+291 *Verdi* : Begin traversing the scopes, layer (0).
+292 *Verdi* : End of traversing.
+293 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.360 user,  412.01M mem
+                   incr: 0.000 sys,  0.090 user,  0.00M mem
+                   accu: 0.000 sys,  0.090 user,  0.00M mem
+              accu incr: 0.000 sys,  0.090 user,  0.00M mem
+
+          Count usage: 55398 var,  11568 idcode,  7186 callback
+                 incr: 27699 var,  0 idcode,  0 callback
+                 accu: 27699 var,  0 idcode,  0 callback
+            accu incr: 27699 var,  0 idcode,  0 callback
+294 Elapsed time:    0:00:05    Mon Dec 13 08:05:10 2021
+295 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.360 user,  412.01M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.090 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 55398 var,  11568 idcode,  7186 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 27699 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+296 Elapsed time:    0:00:05    Mon Dec 13 08:05:10 2021
+297 sps_call_fsdbDumpvars_vd_main at 550000 : /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v(622)
+298 argv[0]: (0)
+299 *Verdi* : Begin traversing the scopes, layer (0).
+300 *Verdi* : End of traversing.
+301 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.470 user,  412.01M mem
+                   incr: 0.000 sys,  0.110 user,  0.00M mem
+                   accu: 0.000 sys,  0.110 user,  0.00M mem
+              accu incr: 0.000 sys,  0.110 user,  0.00M mem
+
+          Count usage: 83097 var,  11568 idcode,  7186 callback
+                 incr: 27699 var,  0 idcode,  0 callback
+                 accu: 27699 var,  0 idcode,  0 callback
+            accu incr: 27699 var,  0 idcode,  0 callback
+302 Elapsed time:    0:00:05    Mon Dec 13 08:05:10 2021
+303 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.470 user,  412.01M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.110 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 83097 var,  11568 idcode,  7186 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 27699 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+304 Elapsed time:    0:00:05    Mon Dec 13 08:05:10 2021
+305 sps_tcl_fsdbDumpflush_vd_main at 2401205000 : N/A(0)
+306 *Verdi* : Flush all FSDB Files at 2,401,205,000 ps.
+307 End of simulation at 2401205000
+308 Memory usage: 426.541 M
+309 Elapsed time:    2:04:36    Mon Dec 13 10:09:41 2021
+310 Begin FSDB profile info:
+311 FSDB Writer : bc1(35700249) bcn(76057) mtf/stf(0/3)
+FSDB Writer elapsed time : flush(0.049192) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-296 End FSDB profile info
-297 FSDB closed. Name: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/inter.fsdb Size: 225307
-298 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-299                      - BlockUsed:506 Acquire:55313188 BufferUsed:1000223575
-300                      - Flush:6 Expand:0 ProducerWait:0 ConsumerWait:443
-301                      - MainProducerTime:7.334103700 TotalConsumerTime:4.951891760
-302                      - ElapsedTime:121.611260000
-303 Producer   0 profile - BlockUsed:506 Acquire:55313188 BufferUsed:1000223575
-304 Consumer   0 profile - Affinity:-1 CPUTime:4.951891760 LifeTime:99.862978195 (0.05%)
-305                      - BlockUsed:506 Acquire:55313188 BufferUsed:1000223575
-306 SimExit
-307 Elapsed time:    0:02:02    Sun Dec 12 15:34:19 2021
-308 Sim process exit
+312 End FSDB profile info
+313 FSDB closed. Name: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/inter.fsdb Size: 359122
+314 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+315                      - BlockUsed:178 Acquire:36234987 BufferUsed:332772341
+316                      - Flush:8 Expand:0 ProducerWait:0 ConsumerWait:14
+317                      - MainProducerTime:2.814646081 TotalConsumerTime:2.296716089
+318                      - ElapsedTime:7475.221864000
+319 Producer   0 profile - BlockUsed:178 Acquire:36234987 BufferUsed:332772341
+320 Consumer   0 profile - Affinity:-1 CPUTime:2.296716089 LifeTime:7470.265299357 (0.00%)
+321                      - BlockUsed:178 Acquire:36234987 BufferUsed:332772341
+322 SimExit
+323 Elapsed time:    2:04:36    Mon Dec 13 10:09:41 2021
+324 Sim process exit

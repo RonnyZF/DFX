@@ -1,39 +1,42 @@
 version: (200506)
 
 available memory: 64M bytes
-used memory: 73728 bytes [need 72K bytes if disable swap]
+used memory: 163840 bytes [need 160K bytes if disable swap]
 
-used block: 2 [memory(2) file(0)]
-                 [ 8K(1) 64K(1) { total 72K bytes } ]
-overhead: (9572) bytes for (2) blocks [Average: (4786) bytes/block]
+used block: 6 [memory(6) file(0)]
+                 [ 8K(4) 64K(2) { total 160K bytes } ]
+overhead: (9572) bytes for (6) blocks [Average: (1595) bytes/block]
 
 write  => 0(times) 0K(bytes) [0K bytes to file]
-read   => 1(times) 63K(bytes) [3K bytes compressed data from file]
-access => 71296(times) 559M(bytes)
-          [hit ratio: 99.9986%]
+read   => 2(times) 126K(bytes) [12K bytes compressed data from file]
+access => 180180(times) 1415M(bytes)
+          [hit ratio: 99.9989%]
 
 time: write(0) read(0)  unit: second
 
 swap file directory: (/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog)
-used swap file number: (1)
+used swap file number: (3)
 
 
 
 swap file manager:
 arrSize: (256)
-idxCnt: (3)
+idxCnt: (4)
 closeHead: (1)
-closeTail: (2)
-openCnt: (2)
-fid(2): fd(34) fileName(/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog/_swap_0001#363601928#1913534)
-	size(0) lastModTime(0) curModTime(1639344736)
-	mode(w+b)	hot(0) cool(1) pos(0)
+closeTail: (3)
+openCnt: (3)
+fid(3): fd(1073741825) fileName(/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/simv.daidir/kdb.elab++/work.lib++/testbench_tap.v.tdc)
+	size(23458) lastModTime(1639404295) curModTime(1639404295)
+	mode(rb)	hot(0) cool(2) pos(0)
+fid(2): fd(34) fileName(/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog/_swap_0001#363601928#1988183)
+	size(0) lastModTime(0) curModTime(1639404305)
+	mode(w+b)	hot(3) cool(1) pos(0)
 fid(1): fd(1073741824) fileName(/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/simv.daidir/kdb.elab++/work.lib++/class.v.tdc)
-	size(26920) lastModTime(1639344722) curModTime(1639344722)
+	size(26920) lastModTime(1639404294) curModTime(1639404294)
 	mode(rb)	hot(2) cool(0) pos(0)
 fid(0): fd(0) fileName(NULL)
 	mode(NULL)	hot(0) cool(0) pos(0)
 ==================================================
-mySelf(16989140) pre(167a7670) next(0)
+mySelf(153f7e60) pre(15502030) next(0)
 version(200506)
 date(May 19 2021 05:00:27)

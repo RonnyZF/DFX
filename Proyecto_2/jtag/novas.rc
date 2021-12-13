@@ -222,6 +222,8 @@ Selection-LineColor = ID_BLUE3
 Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
+[FileBrowser]
+nWaveRestoreRCDirHistory = "\"/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/signal.rc\""
 [Form]
 version = Verdi_R-2020.12-SP2
 [General]
@@ -282,7 +284,7 @@ PinNameToCase =
 [InteractiveDebug]
 tbvLocalWatchArrayLimit = 50
 Watch_0 = 150 80 80 0 
-Watch_1 = 150 80 80 310 
+Watch_1 = 150 80 80 1588 
 Watch_2 = 150 80 80 200 
 Watch_3 = 150 80 80 200 
 Watch_4 = 150 80 80 200 
@@ -382,9 +384,14 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
+schListPort = 800,383,320,324
 highlightColor = 622,381,675,327
-QwUserAskDlg = 797,457,324,134
+QwWarnMsgDlg = 650,499,600,250
+saveSigDlg = 684,352,551,386
 qWaveSignalDialog = 240,168,1439,753
+QwInfoMsgDlg = 584,427,750,250
+restoreSigDlg = 684,326,551,438
+QwUserAskDlg = 798,505,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -682,40 +689,40 @@ DefaultLogTimeUnit = "1.000000ns"
 parRuleSets = "/home/gcastrolocal/tools/verdi/R-2020.12-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /home/gcastrolocal/tools/verdi/R-2020.12-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /home/gcastrolocal/tools/verdi/R-2020.12-SP2/share/VIA/Apps/Prede\
 finedParRules/par_rule_LP.rc /home/gcastrolocal/tools/verdi/R-2020.12-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column0]
-name = Message
-width = 2000
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
-name = Time
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
 name = Reporter
 width = 60
 visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
-name = Severity
-width = 60
-visualIndex = 1
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
 name = Code
 width = 60
 visualIndex = 3
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
 name = Type
 width = 60
 visualIndex = 4
 isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
+name = Message
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
+name = Time
+width = 60
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
+name = Severity
+width = 60
+visualIndex = 1
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference]
 DefaultDisplayTimeUnit = "1.000000ns"
@@ -725,33 +732,33 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
+name = Severity
+width = 60
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = Type
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = Message
 width = 2000
 visualIndex = 4
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = Time
 width = 60
 visualIndex = 0
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
 name = Code
 width = 60
 visualIndex = 2
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = Severity
-width = 60
-visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.parRule]
@@ -837,8 +844,8 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 240 131 1439 753 453 655 936 320
-viewPort = 0 25 1601 619 215 65
+getSignalForm = 240 131 1439 753 453 655 936 176
+viewPort = 0 25 1589 155 269 69
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -1001,7 +1008,8 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/inter.fsdb\""
+RecentFile1 = "\"/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/signal.rc\""
+RecentFile2 = "\"/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/inter.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1286,7 +1294,7 @@ schFillCmtColor = ID_YELLOW4 fill_solid
 pre_select = True
 ShowPassThroughNet = False
 ComputedAnnotColor = ID_PURPLE5
-viewport = 0 25 498 389
+viewport = 0 25 1458 150
 [schematics_print]
 Signature = FALSE
 DesignName = PCU
@@ -1362,9 +1370,9 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1601 619 215 65
+viewPort = 0 25 1589 155 269 69
 [wave.1]
-viewPort = 127 219 960 332 100 65
+viewPort = 0 25 1589 628 269 69
 [wave.2]
 viewPort = 38 314 686 205 100 65
 [wave.3]

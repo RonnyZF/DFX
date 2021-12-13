@@ -25,7 +25,7 @@ assign data_out = mode ? update_reg : data_in;
 endmodule
 
 module Boundary_Scan_Register (data_out, data_in, scan_out, scan_in,  shiftDR, mode, clockDR, updateDR);
-parameter size = 253;
+parameter size = 251;
 output 	[size -1: 0]	data_out;
 output			scan_out;
 input	[size -1: 0]	data_in;

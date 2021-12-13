@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_R-2020.12-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1601 619 215 65
+viewPort 0 25 1589 155 269 69
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 3324965450.000000
-cursor 0.000000
+zoom 0.000000 78405.295822
+cursor 20000.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 0
+markerPos 5
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,8 +45,111 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "G1"
 addGroup "G2"
+activeDirFile "" "/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/inter.fsdb"
+addSignal -h 15 -UNSIGNED -BIN /testbench_tap/Pattern_Register[252:0]
+addSignal -h 15 /testbench_tap/Port3
+addSignal -h 15 /testbench_tap/Port3_fr_ASIC
+addSignal -h 15 /testbench_tap/sdram_clk
+addSignal -h 15 /testbench_tap/wb_clk_i
+addSignal -h 15 /testbench_tap/TCK
+addSignal -h 15 /testbench_tap/TDI
+addSignal -h 15 /testbench_tap/TDO
+addSignal -h 15 /testbench_tap/TMS
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_colbits[1:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_req_depth[1:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_cas[2:0]
+addSignal -h 15 /testbench_tap/cfg_sdr_en
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_mode_reg[12:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_rfmax[2:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_rfsh[11:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_tras_d[3:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_trcar_d[3:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_trcd_d[3:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_trp_d[3:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_twr_d[3:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/cfg_sdr_width[1:0]
+addSignal -h 15 /testbench_tap/enable_bypass_pattern
+addSignal -h 15 /testbench_tap/load_TDI_Generator
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/pattern_ptr[31:0]
+addSignal -h 15 /testbench_tap/resetn
+addSignal -h 15 /testbench_tap/resetn_fr_ASIC
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/sdr_addr[12:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/sdr_ba[1:0]
+addSignal -h 15 /testbench_tap/sdr_cas_n
+addSignal -h 15 /testbench_tap/sdr_cke
+addSignal -h 15 /testbench_tap/sdr_cs_n
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/sdr_dq[15:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/sdr_dqm[1:0]
+addSignal -h 15 /testbench_tap/sdr_init_done
+addSignal -h 15 /testbench_tap/sdr_ras_n
+addSignal -h 15 /testbench_tap/sdr_we_n
+addSignal -h 15 /testbench_tap/strobe
+addSignal -h 15 /testbench_tap/test_se
+addSignal -h 15 /testbench_tap/test_si1
+addSignal -h 15 /testbench_tap/test_si2
+addSignal -h 15 /testbench_tap/test_si3
+addSignal -h 15 /testbench_tap/test_si4
+addSignal -h 15 /testbench_tap/test_si5
+addSignal -h 15 /testbench_tap/test_si6
+addSignal -h 15 /testbench_tap/test_si7
+addSignal -h 15 /testbench_tap/test_si8
+addSignal -h 15 /testbench_tap/test_si9
+addSignal -h 15 /testbench_tap/test_si10
+addSignal -h 15 /testbench_tap/test_si11
+addSignal -h 15 /testbench_tap/test_si12
+addSignal -h 15 /testbench_tap/test_si13
+addSignal -h 15 /testbench_tap/test_si14
+addSignal -h 15 /testbench_tap/test_si15
+addSignal -h 15 /testbench_tap/test_si16
+addSignal -h 15 /testbench_tap/test_si17
+addSignal -h 15 /testbench_tap/test_si18
+addSignal -h 15 /testbench_tap/test_si19
+addSignal -h 15 /testbench_tap/test_si20
+addSignal -h 15 /testbench_tap/test_si21
+addSignal -h 15 /testbench_tap/test_si22
+addSignal -h 15 /testbench_tap/test_si23
+addSignal -h 15 /testbench_tap/test_si24
+addSignal -h 15 /testbench_tap/test_si25
+addSignal -h 15 /testbench_tap/test_si26
+addSignal -h 15 /testbench_tap/test_so1
+addSignal -h 15 /testbench_tap/test_so2
+addSignal -h 15 /testbench_tap/test_so3
+addSignal -h 15 /testbench_tap/test_so4
+addSignal -h 15 /testbench_tap/test_so5
+addSignal -h 15 /testbench_tap/test_so6
+addSignal -h 15 /testbench_tap/test_so7
+addSignal -h 15 /testbench_tap/test_so8
+addSignal -h 15 /testbench_tap/test_so9
+addSignal -h 15 /testbench_tap/test_so10
+addSignal -h 15 /testbench_tap/test_so11
+addSignal -h 15 /testbench_tap/test_so12
+addSignal -h 15 /testbench_tap/test_so13
+addSignal -h 15 /testbench_tap/test_so14
+addSignal -h 15 /testbench_tap/test_so15
+addSignal -h 15 /testbench_tap/test_so16
+addSignal -h 15 /testbench_tap/test_so17
+addSignal -h 15 /testbench_tap/test_so20
+addSignal -h 15 /testbench_tap/test_so21
+addSignal -h 15 /testbench_tap/test_so22
+addSignal -h 15 /testbench_tap/test_so23
+addSignal -h 15 /testbench_tap/test_so24
+addSignal -h 15 /testbench_tap/test_so25
+addSignal -h 15 /testbench_tap/test_so26
+addSignal -h 15 /testbench_tap/wb_ack_o
+addSignal -h 15 /testbench_tap/wb_ack_o_fr_ASIC
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/wb_addr_i[25:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/wb_addr_i_fr_ASIC[25:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/wb_cti_i[2:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/wb_cti_i_fr_ASIC[2:0]
+addSignal -h 15 /testbench_tap/wb_cyc_i
+addSignal -h 15 /testbench_tap/wb_cyc_i_fr_ASIC
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/wb_dat_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/wb_dat_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX /testbench_tap/wb_sel_i[3:0]
+addSignal -h 15 /testbench_tap/wb_stb_i
+addSignal -h 15 /testbench_tap/wb_we_i
+addGroup "G3"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm
@@ -56,10 +159,12 @@ GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
 "/AN2I"
+"/testbench_tap"
 
 SCOPE_LIST_BEGIN
 "/AN2I"
 "/testbench_tap"
+"/testbench_tap/M0"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END

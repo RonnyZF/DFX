@@ -88,10 +88,10 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1002/bus
 COLORTERM=truecolor
 0
 26
-1639344711 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v
-1639331719 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/wrapper.v
+1639404277 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v
+1639374997 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/wrapper.v
 1639175377 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/tdi_tdo_generator.v
-1639332586 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/tap.v
+1639377063 /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/tap.v
 1638913459 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_top_struct.v
 1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/wb2sdrc_dw32_tw8_bl9_test_1.v
 1638388226 /home/rzaratelocal/dfx/DFX/Proyecto_2/rtl/base/sdrc_xfr_ctl_SDR_DW16_SDR_BW2_test_1.v
@@ -119,5 +119,5 @@ COLORTERM=truecolor
 1622258561 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/liberrorinf.so
 1622258323 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libsnpsmalloc.so
 1622258557 /home/gcastrolocal/tools/vcs/R-2020.12-SP2/linux64/lib/libvfs.so
-1639344725 simv.daidir
+1639404297 simv.daidir
 -1 partitionlib

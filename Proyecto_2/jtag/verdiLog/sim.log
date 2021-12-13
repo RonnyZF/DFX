@@ -1,7 +1,7 @@
 Command: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/simv -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli -l /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog/sim.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Dec 12 15:32 2021
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Dec 13 08:05 2021
 
 ucli% synUtils::getArch
 linux64
@@ -17,24 +17,24 @@ FSDB Dumper for VCS, Release Verdi_R-2020.12-SP2, Linux x86_64/64bit, 05/23/2021
 ucli% synEnv::hasFataled
 0
 ucli% ucliCore::getToolPID
-1913663
+1988352
 ucli% sps_interactive
-*Verdi* : Enable RPC Server(1913663)
+*Verdi* : Enable RPC Server(1988352)
 
 ucli% ucliCore::getToolPID
-1913663
+1988352
 ucli% ucliCore::getToolPID
-1913663
+1988352
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% puts $ucliCore::nativeUcliMode
 0
 
 ucli% ucliCore::getToolTopPID
-1913663
+1988352
 ucli% pid
-1913681
-ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.rzaratelocal.1913663 }
+1988370
+ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.rzaratelocal.1988352 }
 
 ucli% if { [info vars watch::vcbp_str_len_limit_of_get_value] != ""} {set watch::vcbp_str_len_limit_of_get_value 1024}
 1024
@@ -89,7 +89,7 @@ line: 22
 logFilename: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog/sim.log
 macroIndex: -1
 macroOffset: -1
-pid: 1913663
+pid: 1988352
 scope: AN2I
 startCol: 0
 state: stopped
@@ -112,15 +112,28 @@ ucli% if {[catch {ucliCore::setFocus tool}]} {}
 ucli% run
 <slp!&*()_+>
 primer test
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v<sls!&*()_+>line: 352<sls!&*()_+>time: 0 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v<sls!&*()_+>line: 556<sls!&*()_+>time: 20000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 *Verdi* : Begin traversing the scopes, layer (0).
 *Verdi* : End of traversing.
+<slp!&*()_+>
+segundo test
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v<sls!&*()_+>line: 600<sls!&*()_+>time: 350000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+<slp!&*()_+>
+tercer test
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v<sls!&*()_+>line: 621<sls!&*()_+>time: 550000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+<slp!&*()_+>
+checkpoint
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/src_jtag/testbench_tap.v<sls!&*()_+>line: 653<sls!&*()_+>time: 128960000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 class.v, 22 : module AN2I(Z,A,B);
 
 ucli% synEnv::hasFataled
 0
 ucli% ucliCore::getToolPID
-1913663
+1988352
 ucli% synEnv::isFinished
 0
 ucli% save::getUserdefinedProcs
@@ -128,7 +141,7 @@ ucli% save::getUserdefinedProcs
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% fsdbDumpflush 
-*Verdi* : Flush all FSDB Files at 3,292,045,000 ps.
+*Verdi* : Flush all FSDB Files at 2,401,205,000 ps.
 
 ucli% senv
 activeDomain: Verilog
@@ -148,12 +161,12 @@ line: 22
 logFilename: /home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/verdiLog/sim.log
 macroIndex: -1
 macroOffset: -1
-pid: 1913663
+pid: 1988352
 scope: AN2I
 startCol: 0
 state: stopped
 thread: 
-time: 3292045000
+time: 2401205000
 timePrecision: 1 ps
 vcdFilename: 
 vpdFilename:
@@ -172,9 +185,9 @@ ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% finish; quit
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 3292045000 ps
-CPU Time:     12.280 seconds;       Data structure size:   0.6Mb
-Sun Dec 12 15:34:19 2021
+Time: 2401205000 ps
+CPU Time:      5.100 seconds;       Data structure size:   0.6Mb
+Mon Dec 13 10:09:41 2021
 
 <VERDI_Terminated>
 

@@ -9,20 +9,27 @@ FSDB Dumper for VCS, Release Verdi_R-2020.12-SP2, Linux x86_64/64bit, 05/23/2021
 *Verdi* : Create FSDB file '/home/rzaratelocal/dfx/DFX/Proyecto_2/jtag/inter.fsdb'
 *Verdi* : Flush all FSDB Files at 0 ps.
 
-*Verdi* : Enable RPC Server(1913663)
+*Verdi* : Enable RPC Server(1988352)
 
 srcTBInvokeSim
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Dec 12 15:32 2021
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Dec 13 08:05 2021
 xterm-256color is Not a valid terminal...
 Verdi>run
 primer test
 *Verdi* : Begin traversing the scopes, layer (0).
 *Verdi* : End of traversing.
+segundo test
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+tercer test
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+checkpoint
 class.v, 22 : module AN2I(Z,A,B);
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 3292045000 ps
-CPU Time:     12.280 seconds;       Data structure size:   0.6Mb
-Sun Dec 12 15:34:19 2021
+Time: 2401205000 ps
+CPU Time:      5.100 seconds;       Data structure size:   0.6Mb
+Mon Dec 13 10:09:41 2021
 debExit
