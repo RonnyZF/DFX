@@ -144,6 +144,10 @@ input [dw/8-1:0]        wb_sel_i           ; // Byte enable
 output [dw-1:0]         wb_dat_o           ;
 input                   wb_cyc_i           ;
 input  [2:0]            wb_cti_i           ;
+input  [16:0] inst_bist;
+output done_check;
+output check_bist;
+output pass_fail_check;
 
 //------------------------------------------------
 // Interface to SDRAMs
@@ -220,7 +224,11 @@ wb2sdrc #(.dw(dw),.tw(tw),.bl(bl)) u_wb2sdrc (
           .wb_sel_i           (wb_sel_i           ) ,
           .wb_dat_o           (wb_dat_o           ) ,
           .wb_cyc_i           (wb_cyc_i           ) ,
-          .wb_cti_i           (wb_cti_i           ) , 
+          .wb_cti_i           (wb_cti_i           ) ,
+          .inst_bist          (inst_bist          ) ,
+          .done_check         (done_check         ) ,
+          .check_bist         (check_bist         ) ,
+          .pass_fail_check    (pass_fail_check    ) , 
 
 
       //SDRAM Controller Hand-Shake Signal 

@@ -106,14 +106,14 @@ The MASTER sends this information to the SLAVE. The SLAVE can use this
 information to prepare the response for the next cycle.
 Table 4-2 Cycle Type Identifiers
 CTI_O(2:0) Description
-‘000’ Classic cycle.
-‘001’ Constant address burst cycle
-‘010’ Incrementing burst cycle
-‘011’ Reserved
-‘100’ Reserved
-‘101 Reserved
-‘110’ Reserved
-‘111’ End-of-Burst
+ï¿½000ï¿½ Classic cycle.
+ï¿½001ï¿½ Constant address burst cycle
+ï¿½010ï¿½ Incrementing burst cycle
+ï¿½011ï¿½ Reserved
+ï¿½100ï¿½ Reserved
+ï¿½101 Reserved
+ï¿½110ï¿½ Reserved
+ï¿½111ï¿½ End-of-Burst
 ****************************************************/
 //--------------------------------------------
 // SDRAM controller Interface 
@@ -132,6 +132,10 @@ input                   sdr_rd_valid       ; // sdr read valid
 input                   sdr_last_rd        ; // Indicate last Read of Burst Transfer
 output [dw-1:0]         sdr_wr_data        ; // sdr write data
 input  [dw-1:0]         sdr_rd_data        ; // sdr read data
+input  [16:0] inst_bist;
+output done_check;
+output check_bist;
+output pass_fail_check;
 
 //----------------------------------------------------
 // Wire Decleration
@@ -146,7 +150,9 @@ wire                    rddatafifo_empty   ;
 wire                    rddatafifo_full    ;
 
 reg                     pending_read       ;
-
+reg done_check;
+reg check_bist;
+reg pass_fail_check;
 
 //-----------------------------------------------------------------------------
 // Ack Generaltion Logic
@@ -214,7 +220,7 @@ end
 // Application layer to SDRAM Controller
 // ------------------------------------------------------------------
    // Address + Burst Length + W/R Request 
-    async_fifo #(.W(APP_AW+bl+1),.DP(4),.WR_FAST(1'b0), .RD_FAST(1'b0)) u_cmdfifo (
+    mbist_controller #(.W(APP_AW+bl+1),.DP(4),.WR_FAST(1'b0), .RD_FAST(1'b0)) u_cmdfifo (
      // Write Path Sys CLock Domain
           .wr_clk             (wb_clk_i           ),
           .wr_reset_n         (!wb_rst_i          ),
@@ -233,7 +239,13 @@ end
           .rd_en              (cmdfifo_rd         ),
           .rd_data            ({sdr_req_len,
 	                        sdr_req_wr_n,
-		                sdr_req_addr}     )
+		                sdr_req_addr}     ),
+         .clk_bist(wb_clk_i),
+         .arst_bist(!wb_rst_i),
+  		   .inst_bist,
+         .done_check,
+         .check_bist,
+  			.pass_fail_check
      );
 
 // synopsys translate_off
