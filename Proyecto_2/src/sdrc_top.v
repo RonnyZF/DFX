@@ -105,7 +105,8 @@ module sdrc_top
                     cfg_sdr_trcar_d     ,
                     cfg_sdr_twr_d       ,
                     cfg_sdr_rfsh        ,
-	            cfg_sdr_rfmax
+	            cfg_sdr_rfmax           ,
+                r_data
 	    );
   
 parameter      APP_AW   = 26;  // Application Address Width
@@ -177,6 +178,7 @@ input [3:0] 		cfg_sdr_trcar_d     ; // Auto-refresh period
 input [3:0]             cfg_sdr_twr_d       ; // Write recovery delay
 input [`SDR_RFSH_TIMER_W-1 : 0] cfg_sdr_rfsh;
 input [`SDR_RFSH_ROW_CNT_W -1 : 0] cfg_sdr_rfmax;
+output  [32:0]          r_data             ; 
 
 //--------------------------------------------
 // SDRAM controller Interface 
@@ -194,6 +196,7 @@ wire                  app_last_rd        ; // Indicate last Read of Burst Transf
 wire                  app_last_wr        ; // Indicate last Write of Burst Transfer
 wire [dw-1:0]         app_wr_data        ; // sdr write data
 wire  [dw-1:0]        app_rd_data        ; // sdr read data
+
 
 /****************************************
 *  These logic has to be implemented using Pads
@@ -270,7 +273,7 @@ sdrc_core #(.SDR_DW(SDR_DW) , .SDR_BW(SDR_BW)) u_sdrc_core (
           .app_wr_en_n        (app_wr_en_n        ) ,
           .app_rd_data        (app_rd_data        ) ,
           .app_rd_valid       (app_rd_valid       ) ,
-	  .app_last_rd        (app_last_rd        ) ,
+	      .app_last_rd        (app_last_rd        ) ,
           .app_last_wr        (app_last_wr        ) ,
           .app_wr_next_req    (app_wr_next_req    ) ,
           .sdr_init_done      (sdr_init_done      ) ,
@@ -301,5 +304,13 @@ sdrc_core #(.SDR_DW(SDR_DW) , .SDR_BW(SDR_BW)) u_sdrc_core (
           .cfg_sdr_rfsh       (cfg_sdr_rfsh       ) ,
           .cfg_sdr_rfmax      (cfg_sdr_rfmax      ) 
 	       );
-   
+   memory_fifo extra_memory (
+       .pntr(app_req_addr),
+       .w_e (app_wr_en_n),
+       .r_e (app_wr_en_n),
+       .w_data (app_wr_data),
+       .clk_r (sdram_clk),
+       .clk_w (sdram_clk),
+       .r_data (r_data)
+   );
 endmodule // sdrc_core
